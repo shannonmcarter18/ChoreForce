@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>ChoreForce Login</title>
+    <style>
+        body {
+       
+            background-color: #CCE5FF;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+
+            height: 100vh;
+            margin: 0;
+            padding-bottom: 100px; 
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+
+            position: absolute;
+            top: 20px;
+            left: 30px;
+
+            color: #003366;
+        }
+
+        .login-box {
+            background: white;
+
+            padding: 20px;
+            border-radius: 10px;
+            width: 350px;
+
+            text-align: center;
+            position: relative;
+            top: -100px;
+        }
+        p {
+            font-size: 24px;
+            color: #003366;
+
+            position: relative;
+            top: -10px;
+        }
+
+            .login-box label {
+                display: block;
+                text-align: left;
+                font-size: 16px;
+            }
+
+        .input-field {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+
+            margin-top: 5px;
+            margin-bottom: 30px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 18px;
+
+            margin-top: 15px;
+
+            background: #003366;
+            color: white;
+        }
+
+            
+    </style>
+</head>
+<body>
+
+    <h1>ChoreForce</h1>
+
+    <div class="login-box">
+        <p>Login</p>
+        <form action="">
+            <label for="username">Username:</label>
+            <input type="username" id="username" name="username" class="input-field"
+                   placeholder="Enter username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="input-field"
+                   placeholder="Enter password" required>
+
+            <button type="login" class="login-btn">Login</button>
+
+            <p style="font-size:10px;top:10px;"><a href="signup.html">Click here to sign up!</a></p>
+        </form>
+    </div>
+
+</body>
+</html>
