@@ -14,6 +14,37 @@
             left: 30px;
             color: #003366;
         }
+        .tab {
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #e1f5fc;
+            position: relative;
+            top: 100px;
+        }
+
+        .tab button {
+             background-color: inherit;
+             float: left;    
+             padding: 15px 50px;
+             border-color: white;
+             border-radius: 10px;
+             font-size: 18px;
+             color: #5d6673;
+        }
+
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+
+        .tabcontent {
+            /* tab content is hidden until we integrate javascript to handle tab events*/
+            /* do we want to go about doing the portal this way, or would making the tabs a link to another html file be easier? */
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }    
 
     </style>
 </head>
@@ -21,15 +52,22 @@
     <h1>ChoreForce</h1>
 
     <!-- tabs for parents main actions-->
-    <div class="tabs">
-        <button class="tablinks" onclick="openMenu(event, 'Options')">Options</button>
-        <button class="tablinks" onclick="openMenu(event, 'Children')">Children</button>
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Options')">Options</button>
+        <button class="tablinks" onclick="openTab(event, 'Children')">Children</button>
+
     </div>
 
+    <!-- tab content (not visible yet) -->
     <div id="Options" class="tabcontent">
-        <h3>option1</h3>
-        <p>put stuff here later</p>
-
+        <h3>Options content</h3>
+        <p>Add stuff here</p>
     </div>
+
+    <div id="Children" class="tabcontent">
+        <h3>Children content</h3>
+        <p>Add more stuff here</p>
+    </div>
+
 </body>
 </html>
