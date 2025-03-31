@@ -6,6 +6,8 @@
         body {
             background-color: #CCE5FF;
         }
+
+        /*"ChoreForce" style*/
         h1 {
             font-size: 32px;
             font-weight: bold;
@@ -14,60 +16,108 @@
             left: 30px;
             color: #003366;
         }
-        .tab {
-            overflow: hidden;
-            border-radius: 10px;
-            background-color: #e1f5fc;
-            position: relative;
-            top: 100px;
+
+        /*welcome banner style*/
+        h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 100px;
+            text-align: center;
+            color: #003366;
         }
 
-        .tab button {
-             background-color: inherit;
-             float: left;    
-             padding: 15px 50px;
-             border-color: white;
-             border-radius: 10px;
-             font-size: 18px;
-             color: #5d6673;
+        /*chorelist subheading style*/
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            top: 300px;
+            left: 100px;
+            color: #4967ad;
         }
 
-
-        .tab button.active {
-            background-color: #ccc;
+        /*buttons style*/
+        a {
+            background-color: #7493db;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 24px;
+            
+            
         }
 
+        table {
+            background-color: aliceblue;
+            color: #7493db;
+            margin-top: 150px;
+            height: 150px;
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+            font-size: 24px;
+        }
 
-        .tabcontent {
-            /* tab content is hidden until we integrate javascript to handle tab events*/
-            /* do we want to go about doing the portal this way, or would making the tabs a link to another html file be easier? */
-            display: none;
-            padding: 6px 12px;
-            border-top: none;
-        }    
+            
 
     </style>
 </head>
 <body>
     <h1>ChoreForce</h1>
 
-    <!-- tabs for parents main actions-->
-    <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'Options')">Options</button>
-        <button class="tablinks" onclick="openTab(event, 'Children')">Children</button>
+    <!--For phase 4 use php to add parent name here-->
+    <h2>Welcome, (name)</h2>
 
-    </div>
+    <!--Buttons to other pages-->
+    <p style="text-align: center;">
+        <a href="chorelistmanage.html">Manage Chorelist</a>
 
-    <!-- tab content (not visible yet) -->
-    <div id="Options" class="tabcontent">
-        <h3>Options content</h3>
-        <p>Add stuff here</p>
-    </div>
+        <!--add link later. not sure what uma will call the file yet-->
+        <a href="">Manage Children</a>
+    </p>
+    <h3>Children's Chores:</h3>
 
-    <div id="Children" class="tabcontent">
-        <h3>Children content</h3>
-        <p>Add more stuff here</p>
-    </div>
+    <!--chorelist organized into a table. if we don't like, we can change-->
+    <table>
+
+        <!--table headings-->
+        <tr>
+            <th style="width: 25%">Kid</th>
+            <th style="width: 15%">ChoreID</th>
+            <th style="width: 35%">Chore</th>
+            <th style="width: 25%">Status</th>
+        </tr>
+        <tr>
+            <!--row 1-->
+
+            <td> .</td>
+            <td> .</td>
+            <td> .</td>
+            <td> .</td>
+        </tr>
+        <tr>
+            <!--row 2-->
+
+            <td> .</td>
+            <td> .</td>
+            <td> .</td>
+            <td> .</td>
+        </tr>
+
+        <tr>
+            <!--row 3-->
+
+            <td> .</td>
+            <td> .</td>
+            <td> .</td>
+            <td> .</td>
+        </tr>
+    </table>
 
 </body>
 </html>
