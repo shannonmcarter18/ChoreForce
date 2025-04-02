@@ -28,7 +28,7 @@
         }
 
         /*form label style*/
-        label {
+        label, p {
             font-size: 24px;
             font-weight: bold;
             color: #4967ad;
@@ -61,6 +61,20 @@
 
     <!--for phase 4, add link to php page below-->
     <form action="">
+
+        <p>Who is this chore for?</p>
+
+        <!-- for phase 3 purposes, fake children are shown. change this to fit accurate data in phase 4-->
+        <input type="radio" id="child_1" name="chore_assign" value="child_1">
+        <label for="child_1">Child 1</label><br>
+
+        <input type="radio" id="child_2" name="chore_assign" value="child_2">
+        <label for="child_2">Child 2</label><br>
+
+        <input type="radio" id="child_3" name="chore_assign" value="child_3">
+        <label for="child_3">Child 3</label><br>
+
+        <br><br>
         <label for="chore">Chore:</label> <br>
         <!-- I'm not sure if chore desc is detailed like sentences or just 1-2 words so the input is a large textbox for now-->
         <textarea id="choredesc" name="choredesc" rows="4" cols="50" placeholder="Describe the chore" required></textarea> <br> <br>
