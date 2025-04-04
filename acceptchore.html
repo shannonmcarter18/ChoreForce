@@ -31,7 +31,7 @@
             font-size: 24px;
             font-weight: bold;
             position: absolute;
-            top: 400px;
+            top: 500px;
             left: 100px;
             color: #4967ad;
         }
@@ -58,6 +58,8 @@
             border-radius: 5px;
             font-size: 18px;
             margin-top: 15px;
+            margin-left: auto;
+            margin-right: auto;
             background: #4967ad;
             color: white;
         }
@@ -65,9 +67,9 @@
         table {
             background-color: aliceblue;
             color: #7493db;
-            margin-top: 100px;
             height: 150px;
             width: 85%;
+            margin-top: 50px;
             margin-left: auto;
             margin-right: auto;
             border-radius: 5px;
@@ -80,12 +82,20 @@
 
 
     <form style="margin-top: 150px" action="">
-        <label for="choreid">Which pending chore would you like to accept as completed?</label> <br>
+        <label for="choreid">Which pending chore would you like to update status?</label> <br>
         <input type="text" id="choreid" name="choreid"
                placeholder="Enter Chore ID" required> <br> <br>
 
+        <p>Do you accept or deny this pending chore completion?</p>
+
+        <input type="radio" id="accept" name="chore_accept_deny" value="accept">
+        <label for="chore_desc">Accept Completion</label><br>
+
+        <input type="radio" id="deny" name="chore_accept_deny" value="deny">
+        <label for="chore_reward">Deny Completion</label><br>
+
         <p style="text-align: center">
-            <button type="submit" class="acceptchore-btn">Accept Completion</button>
+            <button type="submit" class="acceptchore-btn">Update Completion</button>
         </p>
 
     </form>
