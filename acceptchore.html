@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            background-color: #CCE5FF;
+        }
+
+        /*"ChoreForce" style*/
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            color: #003366;
+        }
+
+        /*welcome banner style*/
+        h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 100px;
+            text-align: center;
+            color: #003366;
+        }
+
+        /*chorelist subheading style*/
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            top: 400px;
+            left: 100px;
+            color: #4967ad;
+        }
+
+        /*form label style*/
+        label, p {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4967ad;
+            margin-left: 30px;
+        }
+
+        /*form input boxes style*/
+        input {
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 24px;
+        }
+
+        /*form submit button style*/
+        .acceptchore-btn {
+            width: 25%;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 15px;
+            background: #4967ad;
+            color: white;
+        }
+
+        table {
+            background-color: aliceblue;
+            color: #7493db;
+            margin-top: 100px;
+            height: 150px;
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ChoreForce</h1>
+
+
+    <form style="margin-top: 150px" action="">
+        <label for="choreid">Which pending chore would you like to accept as completed?</label> <br>
+        <input type="text" id="choreid" name="choreid"
+               placeholder="Enter Chore ID" required> <br> <br>
+
+        <p style="text-align: center">
+            <button type="submit" class="acceptchore-btn">Accept Completion</button>
+        </p>
+
+    </form>
+    <br><br>
+    
+    <h3> Chores Pending Approval:</h3>
+
+    <!--Part of this will be replaced in phase 4 once we implement php to add data-->
+    <table>
+
+        <!--table headings-->
+        <tr>
+            <th style="width: 35%">Kid</th>
+            <th style="width: 20%">ChoreID</th>
+            <th style="width: 45%">Chore</th>
+        </tr>
+        <tr>
+            <!--row 1-->
+
+            <td> .</td>
+            <td> .</td>
+            <td> .</td>
+            <td> .</td>
+        </tr>
+        <tr>
+            <!--row 2-->
+
+            <td> .</td>
+            <td> .</td>
+            <td> .</td>
+            <td> .</td>
+        </tr>
+
+        <tr>
+            <!--row 3-->
+
+            <td> .</td>
+            <td> .</td>
+            <td> .</td>
+            <td> .</td>
+        </tr>
+    </table>
+
+</body>
+</html>
