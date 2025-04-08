@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+
+        body {
+            background-color: #CCE5FF;
+        }
+
+        /*"ChoreForce" style*/
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            color: #003366;
+        }
+
+        /*subheading style*/
+        h2 {
+            font-size: 32px;
+            color: #003366;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        /*form label style*/
+        label, p {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4967ad;
+            margin-left: 30px;
+        }
+
+        /*form input boxes style*/
+        input, textarea {
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 24px;
+        }
+
+        /*form submit button style*/
+        .addchild-btn {
+            width: 25%;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 15px;
+            background: #4967ad;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ChoreForce</h1>
+    <h2>Add New Child</h2>
+
+    <!--for phase 4, add link to php page below-->
+    <form action="">
+
+        <br><br>
+        <label for="chore">Child's name:</label> <br>
+
+        <textarea id="childname" name="childname" rows="1" cols="50" placeholder="Enter name" required></textarea> <br> <br>
+
+        <p style="text-align: center">
+            <button type="submit" class="addchild-btn">Add Child</button>
+        </p>
+
+        <label for="curr_child_list">Current child list:</label> <br>
+        
+        <table style="padding-left: 40px;"> <!--table would populate names of current children from the database and display them in this list-->
+            <tr>
+                <!--row 1-->
+                <td> .</td>
+            </tr>
+            <tr>
+                <!--row 2-->
+                <td> .</td>
+            </tr>
+            <tr>
+                <!--row 3-->
+                <td> .</td>
+            </tr>
+        </table>
+        
+
+    </form>
+
+</body>
+</html>

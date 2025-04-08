@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            background-color: #CCE5FF;
+        }
+
+        /*"ChoreForce" style*/
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            color: #003366;
+        }
+
+        /*welcome banner style*/
+        h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 100px;
+            text-align: center;
+            color: #003366;
+        }
+
+        /*chorelist subheading style*/
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            top: 250px;
+            left: 100px;
+            color: #4967ad;
+        }
+
+        /*form label style*/
+        label, p {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4967ad;
+            margin-left: 30px;
+        }
+
+
+        /*buttons style*/
+        a {
+            background-color: #7493db;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 24px;
+        }
+
+        /*form input boxes style*/
+        input {
+            margin-top: 10px;
+            margin-left: 30px;
+            font-size: 24px;
+        }
+
+        /*form submit button style*/
+        .delchild-btn {
+            width: 25%;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 15px;
+            background: #4967ad;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>ChoreForce</h1>
+
+    <!--For phase 4 use php to add parent name here-->
+    <h2>Child Management</h2>
+
+    <!--Buttons to other pages-->
+    <p style="text-align: center;">
+
+        <a href="addchild.html">Add a child</a>
+        <a href="editchild.html">Edit a child</a>
+    </p>
+
+    <!--for phase 4, add link to php page below-->
+    <form style="margin-top: 50px" action="" id="accept">
+        <label for="childid">Enter the id of the child you would like to delete:</label> <br>
+        <input type="text" id="childid" name="childid"
+               placeholder="Enter Child ID" required> <br> <br>
+
+        <p>Are you sure you would like to delete this child?</p>
+
+        <input type="radio" id="yes" name="accept" value="yes">
+        <label for="remove_child">Yes</label><br>
+
+        <input type="radio" id="no" name="accept" value="no">
+        <label for="keep_child">No</label><br>
+
+        <p style="text-align: center">
+            <button type="submit" class="delchild-btn">Delete Child</button>
+        </p>
+
+    </form>
+
+    <script>
+        document.getElementById("accept").addEventListener("submit", function (event)
+        {
+            const selected = document.querySelector('input[name="accept"]:checked');
+
+            if (!selected || selected.value !== "yes")
+            {
+                event.preventDefault();
+                alert("Please select 'yes' to continue action");
+            }
+        });
+    </script>
+
+
+</body>
+</html>

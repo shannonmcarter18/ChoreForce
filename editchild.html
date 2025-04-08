@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+
+        body {
+            background-color: #CCE5FF;
+        }
+
+        /*"ChoreForce" style*/
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            color: #003366;
+        }
+
+        /*subheading style*/
+        h2 {
+            font-size: 32px;
+            color: #003366;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        /*form label style*/
+        label,p {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4967ad;
+            margin-left: 30px;
+        }
+
+        /*form input boxes style*/
+        input {
+            margin-top: 10px;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        /*form submit button style*/
+        .editchild-btn {
+            width: 25%;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 15px;
+            background: #4967ad;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ChoreForce</h1>
+    <h2>Edit Existing Child</h2>
+
+    <!--for phase 4, add link to php page below-->
+    <form action="">
+        
+        <label for="childid">Child ID:</label> <br>
+        <input type="text" id="childid" onchange="myChangeFunction(this)" placeholder="Enter the child id" /> <br>
+        <!-- <input type="text" id="childid" onchange="myChangeFunction(this)" name="childid" placeholder="Enter the child id" required/> <br> <br> -->
+
+        <label for="childname">Child Name:</label> <br>
+        <input type="text" id="childname" />  <!--populate this field with the name associated with the id the user inputs-->
+        
+        <script type="text/javascript">
+            function myChangeFunction(input1) {
+                var input2 = document.getElementById('childname');
+                input2.value = input1.value;  //pull name from databse instead of displaying the id
+            }
+        </script>
+
+        <p style="text-align: center">
+            <button type="submit" class="editchild-btn">Edit Child</button>
+        </p>
+
+    </form>
+
+</body>
+</html>
