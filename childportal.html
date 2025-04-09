@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            background-color: #CCE5FF;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* pushes left + right apart */
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+    	}
+
+        /* Nav bar items style */
+        .nav-items a {
+	        color: #003366;
+	        text-decoration: none;
+    	}
+
+        .nav-items {
+	        display: flex;
+	        gap: 20px;
+    	}
+
+        /*"ChoreForce" style*/
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #003366;
+        }
+
+        /*welcome banner style*/
+        h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 100px;
+            text-align: center;
+            color: #003366;
+        }
+
+        /*chorelist subheading style*/
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            top: 300px;
+            left: 100px;
+            color: #4967ad;
+        }
+
+        /*buttons style*/
+        .button {
+            background-color: #7493db;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 24px;
+        }
+
+        table {
+            background-color: aliceblue;
+            color: #7493db;
+            margin-top: 150px;
+            height: 150px;
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+		<div class="navbar"> <!--nav bar-->
+	        <div class="logo">ChoreForce</div>
+	        <div class="nav-items">
+	            <a href="signin.html">Login/Sign Up</a> <!-- linked to signin.html for now-->
+	            <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
+		    </div>
+		</div>
+	</nav>
+
+    <!--For phase 4 use php to add child name here-->
+    <h2>Welcome, (name)</h2>
+
+    <!--Buttons to other pages-->
+    <p style="text-align: center;">
+
+        <a class="button" href="moneymanage.html">Manage Payments</a>
+
+    </p>
+    <h3 style="top: 220px;"> Total balance: </h3> <!--populate child's total balance from database and display next to this-->
+
+    <h3>My Chores:</h3>
+
+    <!--chorelist organized into a table. if we don't like, we can change-->
+    <table>
+
+        <!--table headings-->
+        <tr>
+            <th style="width: 35%">Chore</th>
+            <th style="width: 25%">Status</th> <!--can be either to-do or pending(waiting parent approval), get from db-->
+        </tr>
+        <tr>
+            <!--row 1-->
+
+            <td> .</td>
+            <td> .</td>
+        </tr>
+        <tr>
+            <!--row 2-->
+
+            <td> .</td>
+            <td> .</td>
+        </tr>
+
+        <tr>
+            <!--row 3-->
+
+            <td> .</td>
+            <td> .</td>
+        </tr>
+    </table>
+
+</body>
+</html>

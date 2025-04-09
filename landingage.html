@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            background-color: #CCE5FF;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* pushes left + right apart */
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+    	}
+
+        /* Nav bar items style */
+        .nav-items a {
+	        color: #003366;
+	        text-decoration: none;
+    	}
+
+        .nav-items {
+	        display: flex;
+	        gap: 20px;
+    	}
+
+        /*"ChoreForce" style in nav bar*/
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #003366;
+        }
+
+        /*welcome banner style*/
+        h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 100px;
+            text-align: center;
+            color: #003366;
+        }
+
+        /*chorelist subheading style*/
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+            top: 150px;
+            color: #4967ad;
+        }
+
+        /*buttons style*/
+        .button {
+            background-color: #7493db;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 24px;
+        }
+
+        table {
+            background-color: aliceblue;
+            color: #7493db;
+            margin-top: 150px;
+            height: 150px;
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+		<div class="navbar"> <!--nav bar-->
+	        <div class="logo">ChoreForce</div>
+	        <div class="nav-items">
+	            <a href="signin.html">Login/Sign Up</a> <!-- decide whether to remove from nav bar-->
+	            <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
+		    </div>
+		</div>
+	</nav>
+
+    <h1 style="text-align: center;"> Welcome to ChoreForce!</h1>
+    <h3 style="text-align: center;"> The best way to keep your kids motivated to get their chores done!</h3>
+    <div style="text-align: center;">
+        <a class="button" style="margin-top: 50px; margin-left: 30px" href="signin.html">Login!</a>
+        <a class="button" style="margin-top: 50px; margin-left: 30px" href="signup.html">Sign Up!</a>
+    </div>
+    
+
+    <h2> Meet the developers!</h2>
+    <!--maybe add our pics or small blurbs about each person in the team-->
+    
+
+</body>
+</html>

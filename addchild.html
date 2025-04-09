@@ -9,6 +9,32 @@
             background-color: #CCE5FF;
         }
 
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* pushes left + right apart */
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+    	}
+
+        /* Nav bar items style */
+        .nav-items a {
+	        color: #003366;
+	        text-decoration: none;
+    	}
+
+        .nav-items {
+	        display: flex;
+	        gap: 20px;
+    	}
+
+        /*"ChoreForce" style in nav bar*/
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #003366;
+        }
+
         /*"ChoreForce" style*/
         h1 {
             font-size: 32px;
@@ -55,8 +81,16 @@
     </style>
 </head>
 <body>
+    <nav>
+		<div class="navbar"> <!--nav bar-->
+	        <div class="logo">ChoreForce</div>
+	        <div class="nav-items">
+	            <a href="signin.html">Login/Sign Up</a> <!-- linked to signin.html for now-->
+	            <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
+		    </div>
+		</div>
+	</nav>
 
-    <h1>ChoreForce</h1>
     <h2>Add New Child</h2>
 
     <!--for phase 4, add link to php page below-->

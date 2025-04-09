@@ -6,7 +6,7 @@
         body {
             background-color: #CCE5FF;
         }
-
+        
         .navbar {
             display: flex;
             justify-content: space-between; /* pushes left + right apart */
@@ -33,16 +33,6 @@
             color: #003366;
         }
 
-        /*"ChoreForce" style*/
-        h1 {
-            font-size: 32px;
-            font-weight: bold;
-            position: absolute;
-            top: 20px;
-            left: 30px;
-            color: #003366;
-        }
-
         /*welcome banner style*/
         h2 {
             font-size: 32px;
@@ -57,31 +47,20 @@
             font-size: 24px;
             font-weight: bold;
             position: absolute;
-            top: 250px;
+            top: 300px;
             left: 100px;
             color: #4967ad;
         }
 
-        /*form label style*/
-        label, p {
-            font-size: 24px;
-            font-weight: bold;
-            color: #4967ad;
-            margin-left: 30px;
-        }
-
-
         /*buttons style*/
         .button {
-            background-color: #7493db;
-            color: white;
-            padding: 14px 25px;
+            width: 25%;
+            padding: 12px;
             border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 24px;
+            font-size: 18px;
+            margin-top: 15px;
+            background: #4967ad;
+            color: white;
         }
 
         /*form input boxes style*/
@@ -91,16 +70,25 @@
             font-size: 24px;
         }
 
-        /*form submit button style*/
-        .delchild-btn {
-            width: 25%;
-            padding: 12px;
-            border-radius: 5px;
-            font-size: 18px;
-            margin-top: 15px;
-            background: #4967ad;
-            color: white;
+        label, p {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4967ad;
+            margin-left: 30px;
         }
+
+        table {
+            background-color: aliceblue;
+            color: #7493db;
+            margin-top: 150px;
+            height: 150px;
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+            font-size: 24px;
+        }
+
     </style>
 </head>
 <body>
@@ -114,34 +102,45 @@
 		</div>
 	</nav>
 
-
     <!--For phase 4 use php to add parent name here-->
-    <h2>Child Management</h2>
+    <h2>Money Management</h2>
 
-    <!--Buttons to other pages-->
-    <p style="text-align: center;">
+    <!--display current bank account connected to user's account-->
+    <label>Current bank account:</label> <br>  <!--display details of the bank account-->
 
-        <a class="button" href="addchild.html">Add a child</a>
-        <a class="button" href="editchild.html">Edit a child</a>
-    </p>
-
-    <!--for phase 4, add link to php page below-->
+    <!--form to withdraw money from bank account-->
     <form style="margin-top: 50px" action="" id="accept">
-        <label for="childid">Enter the id of the child you would like to delete:</label> <br>
-        <input type="text" id="childid" name="childid"
-               placeholder="Enter Child ID" required> <br> <br>
+        <label>Enter the amount of money to withdraw from your bank account:</label> <br>
+        <input type="text" name="withdraw_amt" placeholder="Enter amount" required> <br> <br>
 
-        <p>Are you sure you would like to delete this child?</p>
+        <p>Are you sure you would like to withdraw and send to your ChoreForce account?</p>
 
         <input type="radio" id="yes" name="accept" value="yes">
-        <label for="remove_child">Yes</label><br>
+        <label for="withdraw_amt">Yes</label><br>
 
         <input type="radio" id="no" name="accept" value="no">
-        <label for="keep_child">No</label><br>
+        <label for="withdraw_amt">No</label><br>
 
-        <p style="text-align: center">
-            <button type="submit" class="delchild-btn">Delete Child</button>
-        </p>
+        <button type="submit" class="button" style="margin-top: 50px; margin-left: 30px">Withdraw from Bank</button>
+        <!--after this button is pressed, total account amount should increase-->
+
+    </form>
+
+    <!--box to send money to bank account-->
+    <form style="margin-top: 50px" action="" id="accept">
+        <label>Enter the amount of money to send to your bank account:</label> <br>
+        <input type="text" name="send_amt" placeholder="Enter amount" required> <br> <br>
+
+        <p>Are you sure you would like to send money from your ChoreForce account to your bank account?</p>
+
+        <input type="radio" id="yes" name="accept" value="yes">
+        <label for="send">Yes</label><br>
+
+        <input type="radio" id="no" name="accept" value="no">
+        <label for="send_amt">No</label><br>
+
+        <button type="submit" class="button" style="margin-top: 50px; margin-left: 30px">Send to Bank</button>
+        <!--after this button is pressed, total account amount should decrease-->
 
     </form>
 
@@ -157,7 +156,6 @@
             }
         });
     </script>
-
 
 </body>
 </html>
