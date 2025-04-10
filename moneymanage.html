@@ -96,7 +96,6 @@
 		<div class="navbar"> <!--nav bar-->
 	        <div class="logo">ChoreForce</div>
 	        <div class="nav-items">
-	            <a href="signin.html">Login/Sign Up</a> <!-- linked to signin.html for now-->
 	            <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
 		    </div>
 		</div>
@@ -106,7 +105,13 @@
     <h2>Money Management</h2>
 
     <!--display current bank account connected to user's account-->
-    <label>Current bank account:</label> <br>  <!--display details of the bank account-->
+    <label>Current bank account:</label>  <!--display details of the bank account-->
+    <button type="submit" class="button" style="margin-top: 50px; margin-left: 450px">Delete Current Bank Account</button> <br> <br> <br>
+
+    <!--user can add a bank account-->
+    <label> Add bank account: </label> <br>
+    <input type="text" name="bank_acc" placeholder="Enter number" required> 
+    <button type="submit" class="button" style="margin-top: 10px; margin-left: 385px">Add New Bank Account</button> <br> <br> <br>
 
     <!--form to withdraw money from bank account-->
     <form style="margin-top: 50px" action="" id="accept">

@@ -7,13 +7,29 @@
             background-color: #CCE5FF;
         }
 
-        /*"ChoreForce" style*/
-        h1 {
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* pushes left + right apart */
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+    	}
+
+        /* Nav bar items style */
+        .nav-items a {
+	        color: #003366;
+	        text-decoration: none;
+    	}
+
+        .nav-items {
+	        display: flex;
+	        gap: 20px;
+    	}
+
+        /*"ChoreForce" style in nav bar*/
+        .logo {
             font-size: 32px;
             font-weight: bold;
-            position: absolute;
-            top: 20px;
-            left: 30px;
             color: #003366;
         }
 
@@ -37,7 +53,7 @@
         }
 
         /*buttons style*/
-        a {
+        .button {
             background-color: #7493db;
             color: white;
             padding: 14px 25px;
@@ -68,7 +84,14 @@
     </style>
 </head>
 <body>
-    <h1>ChoreForce</h1>
+    <nav>
+		<div class="navbar"> <!--nav bar-->
+	        <div class="logo">ChoreForce</div>
+	        <div class="nav-items">
+	            <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
+		    </div>
+		</div>
+	</nav>
 
     <!--For phase 4 use php to add parent name here-->
     <h2>Welcome, (name)</h2>
@@ -76,15 +99,15 @@
     <!--Buttons to other pages-->
     <p style="text-align: center;">
 
-        <a href="chorelistmanage.html">Manage Chorelist</a>
+        <a class="button" href="chorelistmanage.html">Manage Chorelist</a>
 
         <!--add link later. not sure what uma will call the file yet-->
-        <a href="childmanage.html">Manage Children</a>
+        <a class="button" href="childmanage.html">Manage Children</a>
 
         <!--add link later. not sure what uma will call the file yet-->
-        <a href="moneymanage.html">Manage Payments</a>
+        <a class="button" href="moneymanage.html">Manage Payments</a>
 
-        <a href="acceptchore.html">Approve Completions</a>
+        <a class="button" href="acceptchore.html">Approve Completions</a>
 
     </p>
     <h3>Children's Chores:</h3>

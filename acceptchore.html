@@ -7,15 +7,32 @@
             background-color: #CCE5FF;
         }
 
-        /*"ChoreForce" style*/
-        h1 {
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* pushes left + right apart */
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+    	}
+
+        /* Nav bar items style */
+        .nav-items a {
+	        color: #003366;
+	        text-decoration: none;
+    	}
+
+        .nav-items {
+	        display: flex;
+	        gap: 20px;
+    	}
+
+        /*"ChoreForce" style in nav bar*/
+        .logo {
             font-size: 32px;
             font-weight: bold;
-            position: absolute;
-            top: 20px;
-            left: 30px;
             color: #003366;
         }
+
 
         /*welcome banner style*/
         h2 {
@@ -78,7 +95,14 @@
     </style>
 </head>
 <body>
-    <h1>ChoreForce</h1>
+    <nav>
+		<div class="navbar"> <!--nav bar-->
+	        <div class="logo">ChoreForce</div>
+	        <div class="nav-items">
+	            <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
+		    </div>
+		</div>
+	</nav>
 
 
     <form style="margin-top: 150px" action="">

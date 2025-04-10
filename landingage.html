@@ -75,6 +75,61 @@
             font-size: 24px;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Float four columns side by side */
+        .column {
+            float: left;
+            width: 33.333%;
+            padding: 0 10px;
+            margin-left: 20px;
+        }
+
+        /* Remove extra left and right margins, due to padding in columns */
+        .row {
+            display: flex;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Style the counter cards */
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+            padding: 30px;
+            text-align: left;
+            background-color: #f1f1f1;
+            width: 350px;
+            height: 300px;
+            border-radius: 30px;
+        }
+
+        .team-img {
+            width: 150px;
+            height: 200px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .main-img{
+            width: 400px;
+            height: 350px;
+        }
+
+        p {
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
@@ -82,7 +137,6 @@
 		<div class="navbar"> <!--nav bar-->
 	        <div class="logo">ChoreForce</div>
 	        <div class="nav-items">
-	            <a href="signin.html">Login/Sign Up</a> <!-- decide whether to remove from nav bar-->
 	            <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
 		    </div>
 		</div>
@@ -91,13 +145,69 @@
     <h1 style="text-align: center;"> Welcome to ChoreForce!</h1>
     <h3 style="text-align: center;"> The best way to keep your kids motivated to get their chores done!</h3>
     <div style="text-align: center;">
+        <img class="main-img" src="images/main.jpg"> <br> <br>
         <a class="button" style="margin-top: 50px; margin-left: 30px" href="signin.html">Login!</a>
         <a class="button" style="margin-top: 50px; margin-left: 30px" href="signup.html">Sign Up!</a>
     </div>
     
-
-    <h2> Meet the developers!</h2>
+    <h2> * * * * * Meet the developers! * * * * *</h2>
+    <h3 style="text-align: center;"> Data Divas </h3>
     <!--maybe add our pics or small blurbs about each person in the team-->
+    <div class="row">
+        <div class="column">
+          <div class="card">
+            <img class="team-img" src="images/uma.jpg">
+            <h3 style="text-align: center;"> Uma </h3>
+            <p> Junior CS Major </p>
+            <p> Frontend </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <img class="team-img" src="images/shannon.jpg">
+            <h3 style="text-align: center;">Shannon</h3>
+            <p> Junior CS Major </p>
+            <p> SQL </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <img class="team-img" src="images/maggie.jpg">
+            <h3 style="text-align: center;"> Maggie </h3>
+            <p> Senior CS Major </p>
+            <p> Database </p>
+          </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="column">
+          <div class="card">
+            <img class="team-img" src="images/kei.jpg">
+            <h3 style="text-align: center;"> Kei </h3>
+            <p> Junior CS Major </p>
+            <p> Frontend </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <img class="team-img" src="images/gayathri.jpg">
+            <h3 style="text-align: center;"> Gayathri </h3>
+            <p> Junior CS Major </p>
+            <p> SQL </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <img class="team-img" src="images/syed.jpg">
+            <h3 style="text-align: center;"> Syed </h3>
+            <p> Junior CS Major </p>
+            <p> Database </p>
+          </div>
+        </div>
+    </div>
+    <br> <br> <br>
+    <h4 style="text-align: center;">* Made with love <3 from the Data Divas Team! *</h4>
     
 
 </body>
