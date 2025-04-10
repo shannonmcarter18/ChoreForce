@@ -84,7 +84,7 @@
     <!--for phase 4, add link to php page below-->
     <form action="">
         <label for="choreid">Chore ID:</label> <br>
-        <input type="text" id="choreid" name="choreid"
+        <input type="text" id="choreid" onchange="myChangeFunction(this)" name="choreid"
                placeholder="Enter the chore id" required> <br> <br>
 
         <p>Enter the attribute you would like to edit</p>
@@ -93,8 +93,17 @@
         <label for="chore_desc">Chore Description</label><br>
 
         <input type="radio" id="reward" name="chore_attribute" value="chore_reward">
-        <label for="chore_reward">Reward Amount</label><br>
+        <label for="chore_reward">Reward Amount</label><br><br><br>
 
+        <label for="choreedit">New Attribute Value:</label> <br>
+        <input type="text" id="choreedit" /> <br> <br>
+
+        <script type="text/javascript">
+            function myChangeFunction(input1) {
+                var input2 = document.getElementById('choreedit');
+                input2.value = input1.value;  // for phase 4, pull attribute value from database instead of displaying the id
+            }
+        </script>
         <p style="text-align: center">
             <button type="submit" class="editchore-btn">Edit Chore</button>
         </p>
