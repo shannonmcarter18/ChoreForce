@@ -85,6 +85,7 @@
     <form action="">
         <label for="choreid">Chore ID:</label> <br>
         <input type="text" id="choreid" onchange="myChangeFunction(this)" name="choreid"
+               pattern="[0-9]*" title="integers only"
                placeholder="Enter the chore id" required> <br> <br>
 
         <p>Enter the attribute you would like to edit</p>
@@ -95,8 +96,10 @@
         <input type="radio" id="reward" name="chore_attribute" value="chore_reward">
         <label for="chore_reward">Reward Amount</label><br><br><br>
 
+
+        <!-- implement input validation for this box once in phase 4-->
         <label for="choreedit">New Attribute Value:</label> <br>
-        <input type="text" id="choreedit" /> <br> <br>
+        <input type="text" id="choreedit" name="choreedit"/> <br> <br>
 
         <script type="text/javascript">
             function myChangeFunction(input1) {

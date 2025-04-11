@@ -110,14 +110,15 @@
     <form style="margin-top: 50px;" action="">
         <label for="choreid">Which pending chore would you like to update status?</label> <br>
         <input type="text" id="choreid" name="choreid"
+               pattern="[0-9]*" title="integers only"
                placeholder="Enter Chore ID" required> <br> <br>
 
         <p>Do you accept or deny this pending chore completion?</p>
 
-        <input type="radio" id="accept" name="chore_accept_deny" value="accept">
+        <input type="radio" id="accept" name="chore_accept" value="yes">
         <label for="chore_desc">Accept Completion</label><br>
 
-        <input type="radio" id="deny" name="chore_accept_deny" value="deny">
+        <input type="radio" id="deny" name="chore_accept" value="no">
         <label for="chore_reward">Deny Completion</label><br>
 
         <p style="text-align: center">

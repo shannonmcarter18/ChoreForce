@@ -96,13 +96,19 @@
     <form action="">
 
         <br><br>
-        <label for="chore">Child's name:</label> <br>
+        <label for="child_name">Child's name:</label> <br>
 
-        <textarea id="childname" name="childname" rows="1" cols="50" placeholder="Enter name" required></textarea> <br> <br>
+        <!-- input validation for a text area is complicated so i changed this to a regular input
+        and in phase 4 we can use split() in php to get first and last name-->
+        <input type="text" id="child_name" name="child_name"
+               pattern="[A-Za-z ]*" title="letters and spaces only"
+               placeholder="Enter the child's full name" /> <br> <br> <br>
 
         <p style="text-align: center">
             <button type="submit" class="addchild-btn">Add Child</button>
         </p>
+
+    </form>
 
         <label for="curr_child_list">Current child list:</label> <br>
         
@@ -121,8 +127,6 @@
             </tr>
         </table>
         
-
-    </form>
 
 </body>
 </html>

@@ -109,10 +109,12 @@
         <form action="">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" class="input-field"
-                   placeholder="Enter username" required>
+                   pattern="[0-9]*" title="integers only"
+                   placeholder="Enter assigned username" required>
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" class="input-field"
+                   pattern="[A-Za-z0-9!_]*" title="Alphanumerics and/or ! _"
                    placeholder="Enter password" required>
 
             <button type="submit" class="login-btn">Login</button>

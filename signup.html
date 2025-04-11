@@ -121,22 +121,22 @@
 
             <label for="fname">First Name:</label>
             <input type="text" id="fname" name="fname" class="input-field"
+                   pattern="[A-Za-z]*" title="Letters only"
                    placeholder="Enter first name" required>
 
             <label for="lname">Last Name:</label>
             <input type="text" id="lname" name="lname" class="input-field"
+                   pattern="[A-Za-z]*" title="Letters only"
                    placeholder="Enter last name" required>
 
             <label for="email">Email:</label>
             <input type="text" id="email" name="email" class="input-field"
+                   pattern="[A-Za-z0-9]*@[A-Za-z]*[.][A-Za-z]{3}" title="email@website.domain"
                    placeholder="Enter email" required>
-
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" class="input-field"
-                   placeholder="Enter username" required>
 
             <label for="password">Password:</label>
             <input type="text" id="password" name="password" class="input-field"
+                   pattern="[A-Za-z0-9!_]*" title="Alphanumerics and/or ! _"
                    placeholder="Enter password" required>
 
             <button type="submit" class="signup-btn">Sign up</button>

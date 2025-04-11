@@ -96,11 +96,15 @@
     <form action="">
         
         <label for="childid">Child ID:</label> <br>
-        <input type="text" id="childid" onchange="myChangeFunction(this)" placeholder="Enter the child id" /> <br>
+        <input type="text" id="childid" name="childid"
+               onchange="myChangeFunction(this)" 
+               pattern="[0-9]*" title="integers only"
+               placeholder="Enter the child id" /> <br>
         <!-- <input type="text" id="childid" onchange="myChangeFunction(this)" name="childid" placeholder="Enter the child id" required/> <br> <br> -->
 
         <label for="childname">Child Name:</label> <br>
-        <input type="text" id="childname" />  <!--populate this field with the name associated with the id the user inputs-->
+        <input type="text" id="childname" name="childname"
+               pattern="[A-Za-z]*" title="letters only"/>  <!--populate this field with the name associated with the id the user inputs-->
         
         <script type="text/javascript">
             function myChangeFunction(input1) {
