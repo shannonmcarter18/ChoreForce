@@ -99,7 +99,7 @@
 		<div class="navbar"> <!--nav bar-->
 	        <div class="logo">ChoreForce</div>
 	        <div class="nav-items">
-	            <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
+	            <!-- there was the portal link here but i removed it because users can't access portal until logged in-->
 		    </div>
 		</div>
 	</nav>
@@ -108,14 +108,14 @@
         <p>Login</p>
         <form action="">
             <label for="username">Username:</label>
-            <input type="username" id="username" name="username" class="input-field"
+            <input type="text" id="username" name="username" class="input-field"
                    placeholder="Enter username" required>
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" class="input-field"
                    placeholder="Enter password" required>
 
-            <button type="login" class="login-btn">Login</button>
+            <button type="submit" class="login-btn">Login</button>
 
             <p style="font-size:10px;top:10px;"><a href="signup.html">Click here to sign up!</a></p>
         </form>
