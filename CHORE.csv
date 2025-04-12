@@ -1,0 +1,61 @@
+CHORE_ID,PARENT_ID,CHILD_ID,DESCRIPTION,REWARD_AMNT,STATUS
+1,1,1,Take out the trash,5.00,Completed
+2,1,2,Clean bedroom,7.50,Pending
+3,2,1,Do the dishes,4.00,Completed
+4,2,2,Sweep the floor,6.00,Completed
+5,3,1,Walk the dog,5.50,Pending
+6,3,2,Mow the lawn,10.00,Completed
+7,4,1,Fold laundry,3.50,Completed
+8,4,2,Clean bathroom,8.00,Pending
+9,5,1,Vacuum living room,4.50,Completed
+10,5,2,Wash the car,9.00,Pending
+11,6,1,Water the plants,3.00,Completed
+12,6,2,Clean garage,12.00,Pending
+13,7,1,Set the table,2.50,Completed
+14,7,2,Help with groceries,6.50,Completed
+15,8,1,Take out recycling,3.75,Pending
+16,8,2,Rake leaves,7.00,Completed
+17,9,1,Clean windows,5.25,Completed
+18,9,2,Organize bookshelf,4.75,Pending
+19,10,1,Shovel snow,8.50,Completed
+20,10,2,Feed pets,3.25,Completed
+21,11,1,Dust furniture,4.25,Pending
+22,11,2,Clean refrigerator,7.75,Completed
+23,12,1,Make bed,2.00,Completed
+24,12,2,Wash dishes,4.50,Pending
+25,13,1,Put away toys,3.50,Completed
+26,13,2,Clean mirrors,4.00,Pending
+27,14,1,Empty dishwasher,3.00,Completed
+28,14,2,Organize desk,5.50,Completed
+29,15,1,Weed garden,6.25,Pending
+30,15,2,Sweep porch,4.75,Completed
+31,16,1,Sort mail,2.25,Completed
+32,16,2,Change lightbulbs,3.75,Pending
+33,17,1,Clean gutters,9.50,Completed
+34,17,2,Wash windows,6.75,Pending
+35,18,1,Mop kitchen,5.25,Completed
+36,18,2,Organize closet,7.25,Completed
+37,19,1,Clean microwave,3.25,Pending
+38,19,2,Take out compost,2.75,Completed
+39,20,1,Wipe countertops,2.50,Completed
+40,20,2,Clean oven,8.75,Pending
+41,21,1,Sort recycling,3.50,Completed
+42,21,2,Wash car,9.25,Pending
+43,22,1,Sweep driveway,4.25,Completed
+44,22,2,Clean fans,5.75,Completed
+45,23,1,Polish silverware,4.00,Pending
+46,23,2,Organize pantry,6.50,Completed
+47,24,1,Clean blinds,5.00,Completed
+48,24,2,Wash bedding,6.00,Pending
+49,25,1,Water garden,4.50,Completed
+50,25,2,Clean stovetop,5.25,Completed
+51,26,1,Sort laundry,3.00,Pending
+52,26,2,Clean patio,7.50,Completed
+53,27,1,Organize toys,4.75,Completed
+54,27,2,Empty trash cans,3.25,Pending
+55,28,1,Scrub sink,3.75,Completed
+56,28,2,Clean baseboards,6.25,Completed
+57,29,1,Fill bird feeders,2.75,Pending
+58,29,2,Organize garage,8.00,Completed
+59,30,1,Clean pet area,5.50,Completed
+60,30,1,Organize basement,10.50,Pending
