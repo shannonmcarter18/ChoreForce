@@ -67,9 +67,8 @@
 
 		# redirect back to the html file
 		header("Location: signup.html?success=1");
-		exit();
 	} 
-	catch(mysqli_sql_exception) {
+	catch(mysqli_sql_exception $e) {
 		echo "unable to add parent into table";
 	}
 ?>
