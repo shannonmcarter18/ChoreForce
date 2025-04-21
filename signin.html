@@ -26,18 +26,18 @@
             padding: 20px;
             background-color: white;
             margin-bottom: 50px;
-    	}
+        }
 
         /* Nav bar items style */
         .nav-items a {
-	        color: #003366;
-	        text-decoration: none;
-    	}
+            color: #003366;
+            text-decoration: none;
+        }
 
         .nav-items {
-	        display: flex;
-	        gap: 20px;
-    	}
+            display: flex;
+            gap: 20px;
+        }
 
         /*"ChoreForce" style in nav bar*/
         .logo {
@@ -48,7 +48,6 @@
 
         .login-box {
             background: white;
-
             padding: 20px;
             border-radius: 10px;
             width: 350px;
@@ -59,16 +58,20 @@
         p {
             font-size: 24px;
             color: #003366;
-
             position: relative;
             top: -10px;
         }
 
-            .login-box label {
-                display: block;
-                text-align: left;
-                font-size: 16px;
-            }
+        #invalid_login {
+            color: red;
+            font-size: 16px;
+        }
+
+        .login-box label {
+            display: block;
+            text-align: left;
+            font-size: 16px;
+        }
 
         .input-field {
             width: 90%;
@@ -76,7 +79,6 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
-
             margin-top: 5px;
             margin-bottom: 30px;
         }
@@ -86,29 +88,28 @@
             padding: 12px;
             border-radius: 5px;
             font-size: 18px;
-
             margin-top: 15px;
-
             background: #003366;
             color: white;
         }
-
-            
     </style>
 </head>
 <body>
     <nav>
-		<div class="navbar"> <!--nav bar-->
-	        <div class="logo">ChoreForce</div>
-	        <div class="nav-items">
-	            <!-- there was the portal link here but i removed it because users can't access portal until logged in-->
-		    </div>
-		</div>
-	</nav>
+        <div class="navbar">
+            <!--nav bar-->
+            <div class="logo">ChoreForce</div>
+            <div class="nav-items">
+                <!-- there was the portal link here but i removed it because users can't access portal until logged in-->
+            </div>
+        </div>
+    </nav>
 
     <div style="margin: auto;" class="login-box">
         <p>Login</p>
-        <form action="">
+
+        <form action="signin.php" method="post">
+
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" class="input-field"
                    pattern="[0-9]*" title="integers only"
@@ -119,11 +120,31 @@
                    pattern="[A-Za-z0-9!_]*" title="Alphanumerics and/or ! _"
                    placeholder="Enter password" required>
 
+            <p id="invalid_login"></p>
             <button type="submit" class="login-btn">Login</button>
 
             <p style="font-size:10px;top:10px;"><a href="signup.html">Click here to sign up!</a></p>
         </form>
     </div>
+    <!-- check if there is a message in the url (error or success sent from php)
+     if so, show applicable message.-->
+    <script>
+    const params = new URLSearchParams(window.location.search);
+
+    // show error message if applicable
+    if (params.has("error"))
+    {
+        const error = params.get("error");
+        let message = "";
+
+        if (error === "invalid_login")
+        {
+	        message = "incorrect username or password.";
+        }
+
+        document.getElementById("invalid_login").textContent = message;
+    }
+    </script>
 
 </body>
 </html>

@@ -26,18 +26,18 @@
             padding: 20px;
             background-color: white;
             margin-bottom: 50px;
-    	}
+        }
 
         /* Nav bar items style */
         .nav-items a {
-	        color: #003366;
-	        text-decoration: none;
-    	}
+            color: #003366;
+            text-decoration: none;
+        }
 
         .nav-items {
-	        display: flex;
-	        gap: 20px;
-    	}
+            display: flex;
+            gap: 20px;
+        }
 
         /*"ChoreForce" style in nav bar*/
         .logo {
@@ -50,23 +50,25 @@
         /*white box around form style*/
         .signup-box {
             background: white;
-
             padding: 20px;
             border-radius: 10px;
             width: 350px;
             text-align: center;
             top: 200px;
             margin: auto;
-            
         }
 
         /*subheading style*/
         p {
             font-size: 24px;
             color: #003366;
-
             position: relative;
             top: -10px;
+        }
+
+        #email_taken {
+            color: red;
+            font-size: 16px;
         }
 
         /*form label style*/
@@ -74,7 +76,6 @@
             display: block;
             text-align: left;
             font-size: 16px;
-            
         }
 
         /*form input box style*/
@@ -83,9 +84,7 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-
             font-size: 16px;
-
             margin-top: 5px;
             margin-bottom: 30px;
         }
@@ -96,9 +95,7 @@
             padding: 12px;
             border-radius: 5px;
             font-size: 18px;
-
             margin-top: 15px;
-
             background: #003366;
             color: white;
         }
@@ -106,19 +103,20 @@
 </head>
 <body>
     <nav>
-		<div class="navbar"> <!--nav bar-->
-	        <div class="logo">ChoreForce</div>
+        <div class="navbar">
+            <!--nav bar-->
+            <div class="logo">ChoreForce</div>
             <div class="nav-items">
                 <!-- there was the portal link here but i removed it because users can't access portal until logged in-->
             </div>
-		</div>
-	</nav>
+        </div>
+    </nav>
 
 
     <div class="signup-box">
         <p>Create Account</p>
         <!--for phase 4, add link to php page below-->
-        <form action="">
+        <form action="signup.php" method="post">
 
 
             <label for="fname">First Name:</label>
@@ -132,20 +130,44 @@
                    placeholder="Enter last name" required>
 
             <label for="email">Email:</label>
+
             <input type="text" id="email" name="email" class="input-field"
                    pattern="[A-Za-z0-9]*@[A-Za-z]*[.][A-Za-z]{3}" title="email@website.domain"
                    placeholder="Enter email" required>
+
+            <p id="email_taken"></p>
 
             <label for="password">Password:</label>
             <input type="text" id="password" name="password" class="input-field"
                    pattern="[A-Za-z0-9!_]*" title="Alphanumerics and/or ! _"
                    placeholder="Enter password" required>
-
+            <div id="account_created"></div>
             <button type="submit" class="signup-btn">Sign up</button>
 
             <p style="font-size:10px;top:10px;"><a href="signin.html">Already have an account? Login!</a></p>
 
         </form>
+
+        <!-- check if there is a message in the url (error or success sent from php)
+             if so, show applicable message.-->
+        <script>
+            const params = new URLSearchParams(window.location.search);
+
+            if (params.has("error")) {
+                const error = params.get("error");
+                let message = "";
+
+                if (error === "email_taken") {
+                    message = "the email you entered is taken.";
+                }
+
+                document.getElementById("email_taken").textContent = message;
+            }
+            else if (params.has("success")) {
+                // once account is created, automatically log into parent portal.
+                window.location.href = "parentportal.html";
+            }
+        </script>
     </div>
 
 </body>
