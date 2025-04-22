@@ -1,28 +1,28 @@
 
-LOAD DATA INFILE '/Users/gayathriutla/Desktop/Projects/databases_class_project/PARENT.csv'
+LOAD DATA INFILE '/Users/maggiebuvan/ChoreForce/PARENT.csv'
 INTO TABLE PARENT
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Users/gayathriutla/Desktop/Projects/databases_class_project/CHILD.csv'
+LOAD DATA INFILE '/Users/maggiebuvan/ChoreForce/CHILD.csv'
 INTO TABLE CHILD
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Users/gayathriutla/Desktop/Projects/databases_class_project/USER.csv'
+LOAD DATA INFILE '/Users/maggiebuvan/ChoreForce/USER.csv'
 INTO TABLE USER_ACCOUNT
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Users/gayathriutla/Desktop/Projects/databases_class_project/CHORE.csv'
+LOAD DATA INFILE '/Users/maggiebuvan/ChoreForce/CHORE.csv'
 INTO TABLE CHORE
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Users/gayathriutla/Desktop/Projects/databases_class_project/PAYMENT.csv'
+LOAD DATA INFILE '/Users/maggiebuvan/ChoreForce/PAYMENT.csv'
 INTO TABLE PAYMENT
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
