@@ -56,7 +56,7 @@
 		echo $r["password"];
 		echo $r["password"];
 		
-		header("Location: signin.html?error=invalid_login");
+		//header("Location: signin.html?error=invalid_login");
 		exit();
 	}
 	else if(trim($r["password"]) == $password) // if results find same user and same password
