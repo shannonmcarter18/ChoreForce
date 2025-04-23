@@ -71,7 +71,7 @@
 				 FROM parent
 				 WHERE id = ?";
 
-		$stmt2 = mysqli_prepare($conn, $sql1);
+		$stmt2 = mysqli_prepare($conn, $sql2);
 
 		try
 		{
@@ -89,7 +89,7 @@
 		$res2 = mysqli_stmt_get_result($stmt2);
 		mysqli_stmt_close($stmt2);
 		$r2 = mysqli_fetch_assoc($res2);
-
+		
 		if($r2 === null) // if id not found in parent table, then id belongs to a child
 		{
 			// i just realized i can redirect to a different html file from php instead of how i did it for signups
@@ -98,14 +98,12 @@
 		}
 		else
 		{
+			//echo "here it is ";
+			//echo count($r2);
 			header("Location: parentportal.html");
 			exit();
 		}
 
-	}
-	else
-	{
-		echo "issue here";
 	}
 
 
