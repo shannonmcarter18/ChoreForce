@@ -86,7 +86,7 @@
     <!--for phase 4, add link to php page below-->
     <form action="editchore.php" method="post">
         <label for="choreid">Chore ID:</label> <br>
-        <input type="text" id="choreid" onchange="myChangeFunction(this)" name="choreid"
+        <input type="text" id="choreid" onchange="myChangeFunction(this)" name="choreid" class="input-field"
                pattern="[0-9]*" title="integers only"
                placeholder="Enter the chore id" required> <br> <br>
 
@@ -101,7 +101,7 @@
 
         <!-- implement input validation for this box once in phase 4-->
         <label for="choreedit">New Attribute Value:</label> <br>
-        <input type="text" id="choreedit" name="choreedit"/> <br> <br>
+        <input type="text" id="choreedit" name="choreedit" class="input-field"/> <br> <br>
 
         <script type="text/javascript">
             function myChangeFunction(input1) {

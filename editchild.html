@@ -98,14 +98,14 @@
     <form action="editchild.php" method="post">
         
         <label for="childid">Child ID:</label> <br>
-        <input type="text" id="childid" name="childid"
+        <input type="text" id="childid" name="childid" class="input-field"
                onchange="myChangeFunction(this)" 
                pattern="[0-9]*" title="integers only"
                placeholder="Enter the child id" /> <br>
         <!-- <input type="text" id="childid" onchange="myChangeFunction(this)" name="childid" placeholder="Enter the child id" required/> <br> <br> -->
 
         <label for="childname">Child Name:</label> <br>
-        <input type="text" id="childname" name="childname"
+        <input type="text" id="childname" name="childname" class="input-field"
                pattern="[A-Za-z]*" title="letters only"/>  <!--populate this field with the name associated with the id the user inputs-->
         
         <script type="text/javascript">

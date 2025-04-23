@@ -1,28 +1,29 @@
+SET FOREIGN_KEY_CHECKS = 0;
 
-LOAD DATA INFILE '/Users/maggiebuvan/ChoreForce/PARENT.csv'
+LOAD DATA INFILE '/Applications/XAMPP/xamppfiles/htdocs/choreforce/PARENT.csv'
 INTO TABLE PARENT
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Users/maggiebuvan/ChoreForce/CHILD.csv'
+LOAD DATA INFILE '/Applications/XAMPP/xamppfiles/htdocs/choreforce/CHILD.csv'
 INTO TABLE CHILD
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Users/maggiebuvan/ChoreForce/USER.csv'
-INTO TABLE USER_ACCOUNT
+LOAD DATA INFILE '/Applications/XAMPP/xamppfiles/htdocs/choreforce/USER.csv'
+INTO TABLE USER
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Users/maggiebuvan/ChoreForce/CHORE.csv'
+LOAD DATA INFILE '/Applications/XAMPP/xamppfiles/htdocs/choreforce/CHORE.csv'
 INTO TABLE CHORE
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Users/maggiebuvan/ChoreForce/PAYMENT.csv'
+LOAD DATA INFILE '/Applications/XAMPP/xamppfiles/htdocs/choreforce/PAYMENT.csv'
 INTO TABLE PAYMENT
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
