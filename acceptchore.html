@@ -109,7 +109,7 @@
 
     <h2>Accept Pending Chores</h2>
 
-    <form style="margin-top: 50px;" action="">
+    <form style="margin-top: 50px;" action="acceptchore.php" method="post">
         <label for="choreid">Which pending chore would you like to update status?</label> <br>
         <input type="text" id="choreid" name="choreid"
                pattern="[0-9]*" title="integers only"
@@ -167,6 +167,12 @@
             <td> .</td>
         </tr>
     </table>
+<script>
+const params = new URLSearchParams(window.location.search);
+if (params.has("success")) alert("Chore updated successfully!");
+if (params.has("error")) alert("Something went wrong. Please try again.");
+</script>
+
 
 </body>
 </html>
