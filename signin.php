@@ -57,7 +57,7 @@
 	else if($r["password"] == $password) // if results find same user and same password
 	{
 		//echo "match!<br>";
-
+		
 		// keeps user id saved for reference once page redirects to one of the portals (so you can get access to user's info in the portal pages)
 		$_SESSION['user_id'] = $r['id'];
 
