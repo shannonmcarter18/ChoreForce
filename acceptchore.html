@@ -165,6 +165,12 @@
             <td> .</td>
         </tr>
     </table>
+<script>
+const params = new URLSearchParams(window.location.search);
+if (params.has("success")) alert("Chore updated successfully!");
+if (params.has("error")) alert("Something went wrong. Please try again.");
+</script>
+
 
 </body>
 </html>
