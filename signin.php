@@ -17,6 +17,7 @@
 		exit();
 	}
 
+	$conn ->set_charset("utf8mb4");
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 
@@ -49,12 +50,16 @@
 
 	//echo $r["password"];
 
-	if($r === null || $r["password"] != $password) // if sql query has no results or no matching result
+	if($r === null || trim($r["password"]) != $password) // if sql query has no results or no matching result
 	{
-		//echo "incorrect username or password<br>";
+		echo $password;
+		echo $r["password"];
+		echo $r["password"];
+		
 		header("Location: signin.html?error=invalid_login");
+		exit();
 	}
-	else if($r["password"] == $password) // if results find same user and same password
+	else if(trim($r["password"]) == $password) // if results find same user and same password
 	{
 		//echo "match!<br>";
 		
@@ -73,7 +78,7 @@
 			mysqli_stmt_bind_param($stmt2, "i", $username);
 			mysqli_stmt_execute($stmt2);
 	
-			//echo "select successful<br>";
+			echo "select successful<br>";
 		} 
 		catch(mysqli_sql_exception $e) 
 		{
@@ -89,12 +94,18 @@
 		{
 			// i just realized i can redirect to a different html file from php instead of how i did it for signups
 			header("Location: childportal.html");
+			exit();
 		}
 		else
 		{
 			header("Location: parentportal.html");
+			exit();
 		}
 
+	}
+	else
+	{
+		echo "issue here";
 	}
 
 
