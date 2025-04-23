@@ -93,7 +93,7 @@
     <h2>Add New Child</h2>
 
     <!--for phase 4, add link to php page below-->
-    <form action="">
+    <form action="addchild.php" method="post">
 
         <br><br>
         <label for="child_name">Child's name:</label> <br>
@@ -126,7 +126,13 @@
                 <td> .</td>
             </tr>
         </table>
-        
+	
+        <script>
+	const params = new URLSearchParams(window.location.search);
+	if (params.has("success")) alert("Child added successfully!");
+	if (params.has("error")) alert("Failed to add child. Try again.");
+	</script>
+
 
 </body>
 </html>
