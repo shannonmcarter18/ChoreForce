@@ -71,7 +71,7 @@
 				 FROM parent
 				 WHERE id = ?";
 
-		$stmt2 = mysqli_prepare($conn, $sql1);
+		$stmt2 = mysqli_prepare($conn, $sql2);
 
 		try
 		{
