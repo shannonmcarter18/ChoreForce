@@ -16,18 +16,18 @@
             align-items: center;
             padding: 20px;
             background-color: white;
-    	}
+        }
 
         /* Nav bar items style */
         .nav-items a {
-	        color: #003366;
-	        text-decoration: none;
-    	}
+            color: #003366;
+            text-decoration: none;
+        }
 
         .nav-items {
-	        display: flex;
-	        gap: 20px;
-    	}
+            display: flex;
+            gap: 20px;
+        }
 
         /*"ChoreForce" style in nav bar*/
         .logo {
@@ -45,7 +45,7 @@
         }
 
         /*form label style*/
-        label,p {
+        label, p {
             font-size: 24px;
             font-weight: bold;
             color: #4967ad;
@@ -73,13 +73,15 @@
 </head>
 <body>
     <nav>
-		<div class="navbar"> <!--nav bar-->
-	        <div class="logo">ChoreForce</div>
-	        <div class="nav-items">
-	            <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
-		    </div>
-		</div>
-	</nav>
+        <div class="navbar">
+            <!--nav bar-->
+            <div class="logo">ChoreForce</div>
+            <div class="nav-items">
+                <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
+                <a href="logout.php">Logout</a>
+            </div>
+        </div>
+    </nav>
 
     <h2>Edit Existing Chore</h2>
 
@@ -101,7 +103,7 @@
 
         <!-- implement input validation for this box once in phase 4-->
         <label for="choreedit">New Attribute Value:</label> <br>
-        <input type="text" id="choreedit" name="choreedit" class="input-field"/> <br> <br>
+        <input type="text" id="choreedit" name="choreedit" /> <br> <br>
 
         <script type="text/javascript">
             function myChangeFunction(input1) {

@@ -16,18 +16,18 @@
             align-items: center;
             padding: 20px;
             background-color: white;
-    	}
+        }
 
         /* Nav bar items style */
         .nav-items a {
-	        color: #003366;
-	        text-decoration: none;
-    	}
+            color: #003366;
+            text-decoration: none;
+        }
 
         .nav-items {
-	        display: flex;
-	        gap: 20px;
-    	}
+            display: flex;
+            gap: 20px;
+        }
 
         /*"ChoreForce" style in nav bar*/
         .logo {
@@ -55,7 +55,7 @@
         }
 
         /*form label style*/
-        label,p {
+        label, p {
             font-size: 24px;
             font-weight: bold;
             color: #4967ad;
@@ -84,30 +84,32 @@
 </head>
 <body>
     <nav>
-		<div class="navbar"> <!--nav bar-->
-	        <div class="logo">ChoreForce</div>
-	        <div class="nav-items">
-	            <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
-		    </div>
-		</div>
-	</nav>
+        <div class="navbar">
+            <!--nav bar-->
+            <div class="logo">ChoreForce</div>
+            <div class="nav-items">
+                <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
+                <a href="logout.php">Logout</a>
+            </div>
+        </div>
+    </nav>
 
     <h2>Edit Existing Child</h2>
 
     <!--for phase 4, add link to php page below-->
-    <form action="editchild.php" method="post">
-        
+    <form action="">
+
         <label for="childid">Child ID:</label> <br>
-        <input type="text" id="childid" name="childid" class="input-field"
-               onchange="myChangeFunction(this)" 
+        <input type="text" id="childid" name="childid"
+               onchange="myChangeFunction(this)"
                pattern="[0-9]*" title="integers only"
                placeholder="Enter the child id" /> <br>
         <!-- <input type="text" id="childid" onchange="myChangeFunction(this)" name="childid" placeholder="Enter the child id" required/> <br> <br> -->
 
         <label for="childname">Child Name:</label> <br>
-        <input type="text" id="childname" name="childname" class="input-field"
-               pattern="[A-Za-z]*" title="letters only"/>  <!--populate this field with the name associated with the id the user inputs-->
-        
+        <input type="text" id="childname" name="childname"
+               pattern="[A-Za-z]*" title="letters only" />  <!--populate this field with the name associated with the id the user inputs-->
+
         <script type="text/javascript">
             function myChangeFunction(input1) {
                 var input2 = document.getElementById('childname');

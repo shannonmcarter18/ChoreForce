@@ -64,8 +64,10 @@
 		//echo "match!<br>";
 		
 		// keeps user id saved for reference once page redirects to one of the portals (so you can get access to user's info in the portal pages)
-		$_SESSION['user_id'] = $r['id'];
-
+		//echo count($r);
+		$_SESSION["user_id"] = $username;
+		echo "here is id ";
+		echo $_SESSION["user_id"];
 		// check whether user is a parent
 		$sql2 = "SELECT * 
 				 FROM parent
@@ -89,7 +91,7 @@
 		$res2 = mysqli_stmt_get_result($stmt2);
 		mysqli_stmt_close($stmt2);
 		$r2 = mysqli_fetch_assoc($res2);
-
+		
 		if($r2 === null) // if id not found in parent table, then id belongs to a child
 		{
 			// i just realized i can redirect to a different html file from php instead of how i did it for signups
@@ -98,14 +100,12 @@
 		}
 		else
 		{
+			//echo "here it is ";
+			//echo count($r2);
 			header("Location: parentportal.html");
 			exit();
 		}
 
-	}
-	else
-	{
-		echo "issue here";
 	}
 
 

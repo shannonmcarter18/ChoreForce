@@ -15,18 +15,18 @@
             align-items: center;
             padding: 20px;
             background-color: white;
-    	}
+        }
 
         /* Nav bar items style */
         .nav-items a {
-	        color: #003366;
-	        text-decoration: none;
-    	}
+            color: #003366;
+            text-decoration: none;
+        }
 
         .nav-items {
-	        display: flex;
-	        gap: 20px;
-    	}
+            display: flex;
+            gap: 20px;
+        }
 
         /*"ChoreForce" style in nav bar*/
         .logo {
@@ -61,7 +61,6 @@
             font-weight: bold;
             color: #4967ad;
             margin-left: 30px;
-            
         }
 
         /*form input boxes style*/
@@ -99,17 +98,19 @@
 </head>
 <body>
     <nav>
-		<div class="navbar"> <!--nav bar-->
-	        <div class="logo">ChoreForce</div>
-	        <div class="nav-items">
-	            <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
-		    </div>
-		</div>
-	</nav>
+        <div class="navbar">
+            <!--nav bar-->
+            <div class="logo">ChoreForce</div>
+            <div class="nav-items">
+                <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
+                <a href="logout.php">Logout</a>
+            </div>
+        </div>
+    </nav>
 
     <h2>Accept Pending Chores</h2>
 
-    <form style="margin-top: 50px;" action="acceptchore.php" method="post">
+    <form style="margin-top: 50px;" action="">
         <label for="choreid">Which pending chore would you like to update status?</label> <br>
         <input type="text" id="choreid" name="choreid"
                pattern="[0-9]*" title="integers only"
@@ -129,7 +130,7 @@
 
     </form>
     <br><br>
-    
+
     <h3> Chores Pending Approval:</h3>
 
     <!--Part of this will be replaced in phase 4 once we implement php to add data-->
@@ -167,12 +168,6 @@
             <td> .</td>
         </tr>
     </table>
-<script>
-const params = new URLSearchParams(window.location.search);
-if (params.has("success")) alert("Chore updated successfully!");
-if (params.has("error")) alert("Something went wrong. Please try again.");
-</script>
-
 
 </body>
 </html>
