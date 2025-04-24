@@ -64,8 +64,10 @@
 		//echo "match!<br>";
 
 		// keeps user id saved for reference once page redirects to one of the portals (so you can get access to user's info in the portal pages)
-		$_SESSION['user_id'] = $r['id'];
-
+		//echo count($r);
+		$_SESSION["user_id"] = $username;
+		echo "here is id ";
+		echo $_SESSION["user_id"];
 		// check whether user is a parent
 		$sql2 = "SELECT * 
 				 FROM parent

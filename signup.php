@@ -14,6 +14,7 @@
 	}
 	catch(mysqli_sql_exception $e){
 		echo "unable to connect";
+		exit();
 	}
 
 	# gather all inputs from html file. what's in the quotes should be the name of the input in the html file.
@@ -64,11 +65,14 @@
 		# save current info so user has access to it even after going to different pages
 		$_SESSION["user_id"] = $id;
 		$_SESSION["first_name"] = $first_name;
-
+		echo "here is id ";
+		echo $id;
 		# redirect back to the html file
 		header("Location: signup.html?success=1");
+		exit();
 	} 
 	catch(mysqli_sql_exception $e) {
 		echo "unable to add parent into table";
+		exit();
 	}
 ?>
