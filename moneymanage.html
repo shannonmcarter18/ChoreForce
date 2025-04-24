@@ -6,25 +6,25 @@
         body {
             background-color: #CCE5FF;
         }
-        
+
         .navbar {
             display: flex;
             justify-content: space-between; /* pushes left + right apart */
             align-items: center;
             padding: 20px;
             background-color: white;
-    	}
+        }
 
         /* Nav bar items style */
         .nav-items a {
-	        color: #003366;
-	        text-decoration: none;
-    	}
+            color: #003366;
+            text-decoration: none;
+        }
 
         .nav-items {
-	        display: flex;
-	        gap: 20px;
-    	}
+            display: flex;
+            gap: 20px;
+        }
 
         /*"ChoreForce" style in nav bar*/
         .logo {
@@ -88,18 +88,19 @@
             border-radius: 5px;
             font-size: 24px;
         }
-
     </style>
 </head>
 <body>
     <nav>
-		<div class="navbar"> <!--nav bar-->
-	        <div class="logo">ChoreForce</div>
-	        <div class="nav-items">
-	            <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
-		    </div>
-		</div>
-	</nav>
+        <div class="navbar">
+            <!--nav bar-->
+            <div class="logo">ChoreForce</div>
+            <div class="nav-items">
+                <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
+                <a href="logout.php">Logout</a>
+            </div>
+        </div>
+    </nav>
 
     <!--For phase 4 use php to add parent name here-->
     <h2>Money Management</h2>
@@ -110,17 +111,17 @@
 
     <!--user can add a bank account-->
     <form>
-    <label> Add bank account: </label> <br>
-    <input type="text" name="bank_acc" 
-           pattern="[0-9]*" title="integers only"
-           placeholder="Enter number" required> 
-    <button type="submit" class="button" style="margin-top: 10px; margin-left: 385px">Add New Bank Account</button> <br> <br> <br>
+        <label> Add bank account: </label> <br>
+        <input type="text" name="bank_acc"
+               pattern="[0-9]*" title="integers only"
+               placeholder="Enter number" required>
+        <button type="submit" class="button" style="margin-top: 10px; margin-left: 385px">Add New Bank Account</button> <br> <br> <br>
     </form>
 
     <!--form to withdraw money from bank account-->
     <form style="margin-top: 50px" action="" id="accept">
         <label>Enter the amount of money to withdraw from your bank account:</label> <br>
-        <input type="text" name="withdraw_amt" 
+        <input type="text" name="withdraw_amt"
                pattern="[0-9]*" title="enter dollar value do not include '$' or cents"
                placeholder="Enter amount" required> <br> <br>
 
@@ -140,7 +141,7 @@
     <!--box to send money to bank account-->
     <form style="margin-top: 50px" action="" id="accept">
         <label>Enter the amount of money to send to your bank account:</label> <br>
-        <input type="text" name="send_amt" 
+        <input type="text" name="send_amt"
                pattern="[0-9]*" title="enter dollar value do not include '$' or cents"
                placeholder="Enter amount" required> <br> <br>
 
@@ -158,12 +159,10 @@
     </form>
 
     <script>
-        document.getElementById("accept").addEventListener("submit", function (event)
-        {
+        document.getElementById("accept").addEventListener("submit", function (event) {
             const selected = document.querySelector('input[name="accept"]:checked');
 
-            if (!selected || selected.value !== "yes")
-            {
+            if (!selected || selected.value !== "yes") {
                 event.preventDefault();
                 alert("Please select 'yes' to continue action");
             }
