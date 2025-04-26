@@ -111,7 +111,7 @@
             <!--nav bar-->
             <div class="logo">ChoreForce</div>
             <div class="nav-items">
-                <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
+                <a href="parentportal.php">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
                 <a href="logout.php">Logout</a>
             </div>
         </div>
@@ -129,7 +129,7 @@
     </p>
 
     <!--for phase 4, add link to php page below-->
-    <form style="margin-top: 50px" action="" id="accept">
+    <form style="margin-top: 50px" action="deletechild.php" method="post" id="accept">
         <label for="childid">Enter the id of the child you would like to delete:</label> <br>
         <input type="text" id="childid" name="childid"
                pattern="[0-9]*" title="integers only"

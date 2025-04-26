@@ -76,7 +76,7 @@
             <!--nav bar-->
             <div class="logo">ChoreForce</div>
             <div class="nav-items">
-                <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
+                <a href="parentportal.php">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
                 <a href="logout.php">Logout</a>
             </div>
         </div>
@@ -89,7 +89,7 @@
 
         <p>Who is this chore for?</p>
 
-        <?php include 'addchore2.php'; ?>
+        <?php include 'displaychildren.php'; ?>
 
         <!-- for phase 3 purposes, fake children are shown. change this to fit accurate data in phase 4-->
 
