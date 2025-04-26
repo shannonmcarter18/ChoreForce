@@ -15,18 +15,18 @@
             align-items: center;
             padding: 20px;
             background-color: white;
-    	}
+        }
 
         /* Nav bar items style */
         .nav-items a {
-	        color: #003366;
-	        text-decoration: none;
-    	}
+            color: #003366;
+            text-decoration: none;
+        }
 
         .nav-items {
-	        display: flex;
-	        gap: 20px;
-    	}
+            display: flex;
+            gap: 20px;
+        }
 
         /*"ChoreForce" style in nav bar*/
         .logo {
@@ -82,18 +82,20 @@
 </head>
 <body>
     <nav>
-		<div class="navbar"> <!--nav bar-->
-	        <div class="logo">ChoreForce</div>
-	        <div class="nav-items">
-	            <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
-		    </div>
-		</div>
-	</nav>
+        <div class="navbar">
+            <!--nav bar-->
+            <div class="logo">ChoreForce</div>
+            <div class="nav-items">
+                <a href="parentportal.html">My Portal</a>   <!--linked to parent portal for now, but this would change based on whether user is parent or child(childportal.html)-->
+                <a href="logout.php">Logout</a>
+            </div>
+        </div>
+    </nav>
 
     <h2>Add New Child</h2>
 
     <!--for phase 4, add link to php page below-->
-    <form action="">
+    <form action="addchild.php" method="post">
 
         <br><br>
         <label for="child_name">Child's name:</label> <br>
@@ -110,23 +112,30 @@
 
     </form>
 
-        <label for="curr_child_list">Current child list:</label> <br>
-        
-        <table style="padding-left: 40px;"> <!--table would populate names of current children from the database and display them in this list-->
-            <tr>
-                <!--row 1-->
-                <td> .</td>
-            </tr>
-            <tr>
-                <!--row 2-->
-                <td> .</td>
-            </tr>
-            <tr>
-                <!--row 3-->
-                <td> .</td>
-            </tr>
-        </table>
-        
+    <label for="curr_child_list">Current child list:</label> <br>
+
+    <table style="padding-left: 40px;">
+        <!--table would populate names of current children from the database and display them in this list-->
+        <tr>
+            <!--row 1-->
+            <td> .</td>
+        </tr>
+        <tr>
+            <!--row 2-->
+            <td> .</td>
+        </tr>
+        <tr>
+            <!--row 3-->
+            <td> .</td>
+        </tr>
+    </table>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        if (params.has("success")) alert("Child added successfully!");
+        if (params.has("error")) alert("Failed to add child. Try again.");
+    </script>
+
 
 </body>
 </html>

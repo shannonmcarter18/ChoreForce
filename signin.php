@@ -17,6 +17,7 @@
 		exit();
 	}
 
+	$conn ->set_charset("utf8mb4");
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 
@@ -49,30 +50,37 @@
 
 	//echo $r["password"];
 
-	if($r === null || $r["password"] != $password) // if sql query has no results or no matching result
+	if($r === null || trim($r["password"]) != $password) // if sql query has no results or no matching result
 	{
+		echo $password;
+		echo $r["password"];
+		echo $r["password"];
+		
 		header("Location: signin.html?error=invalid_login");
+		exit();
 	}
-	else if($r["password"] == $password) // if results find same user and same password
+	else if(trim($r["password"]) == $password) // if results find same user and same password
 	{
 		//echo "match!<br>";
 
 		// keeps user id saved for reference once page redirects to one of the portals (so you can get access to user's info in the portal pages)
-		$_SESSION['user_id'] = $r['id'];
-
+		//echo count($r);
+		$_SESSION["user_id"] = $username;
+		echo "here is id ";
+		echo $_SESSION["user_id"];
 		// check whether user is a parent
 		$sql2 = "SELECT * 
 				FROM parent
 				WHERE id = ?";
 
-		$stmt2 = mysqli_prepare($conn, $sql1);
+		$stmt2 = mysqli_prepare($conn, $sql2);
 
 		try
 		{
 			mysqli_stmt_bind_param($stmt2, "i", $username);
 			mysqli_stmt_execute($stmt2);
-
-			//echo "select successful<br>";
+	
+			echo "select successful<br>";
 		} 
 		catch(mysqli_sql_exception $e) 
 		{
@@ -83,15 +91,19 @@
 		$res2 = mysqli_stmt_get_result($stmt2);
 		mysqli_stmt_close($stmt2);
 		$r2 = mysqli_fetch_assoc($res2);
-
+		
 		if($r2 === null) // if id not found in parent table, then id belongs to a child
 		{
 			// i just realized i can redirect to a different html file from php instead of how i did it for signups
 			header("Location: childportal.html");
+			exit();
 		}
 		else
 		{
-			header("Location: parentportal.html");
+			//echo "here it is ";
+			//echo count($r2);
+			header("Location: parentportal.php");
+			exit();
 		}
 
 	}

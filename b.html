@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background-color: #e8cbea;
+            margin-bottom: 300px;
+        }
+
+        .headings {
+            color: #780b93;
+            text-align: center;
+        }
+
+        p {
+            color: #ce0a62;
+            text-align: center;
+        }
+
+        #form, .submit_btn, input {
+            font-size: 24px;
+        }
+
+        label {
+            color: #ce0a62;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="headings">HW 6</h1>
+    <h2 class="headings">Part B</h2><br><br>
+    <h3 class="headings">Update Email:</h3>
+    <form action="b.php" id="form" method="get">
+
+        <label for="user">Username:</label> <br>
+        <input type="text" id="user" name="user" placeholder="enter your username" required> <br><br>
+        <label for="pswd">Password:</label> <br>
+        <input type="text" id="pswd" name="pswd" placeholder="enter your password" required> <br><br>
+        <label for="email">New Email:</label> <br>
+        <input type="text" id="email" name="email" placeholder="enter your new email" required> <br><br>
+
+        <button type="submit" class="submit_btn">Submit</button>
+    </form>
+
+</body>
+</html>
