@@ -95,7 +95,7 @@
 		if($r2 === null) // if id not found in parent table, then id belongs to a child
 		{
 			// i just realized i can redirect to a different html file from php instead of how i did it for signups
-			header("Location: childportal.html");
+			header("Location: childportal.php");
 			exit();
 		}
 		else
