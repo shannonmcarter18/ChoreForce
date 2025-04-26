@@ -102,7 +102,7 @@
 		{
 			//echo "here it is ";
 			//echo count($r2);
-			header("Location: parentportal.html");
+			header("Location: parentportal.php");
 			exit();
 		}
 
