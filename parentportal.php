@@ -116,12 +116,6 @@ mysqli_close($conn);
         .chore-table th { background-color: #eaf2ff; font-weight: bold; color: #003366; }
         .chore-table tr:last-child td { border-bottom: none; }
         .chore-table tr:hover { background-color: #f9f9f9; }
-        /* Status Styling Classes (use lowercase status from DB) */
-        .chore-table td.status-assigned { color: #6c757d; } /* Bootstrap secondary text color */
-        .chore-table td.status-pending { color: #ffc107; font-weight: bold; } /* Bootstrap warning color */
-        .chore-table td.status-completed { color: #28a745; font-weight: bold; } /* Bootstrap success color */
-        .chore-table td.status-approved { color: #007bff; font-weight: bold;} /* Bootstrap primary color */
-        .chore-table td.status-rejected { color: #dc3545; font-weight: bold;} /* Bootstrap danger color */
         .no-chores-message td { text-align: center; color: #777; font-style: italic; padding: 20px; }
     </style>
 </head>
@@ -140,10 +134,9 @@ mysqli_close($conn);
     <p class="user-info">Username: <strong><?php echo htmlspecialchars($user_id); ?></strong></p>
 
     <div class="button-container">
-         <a class="button" href="chorelistmanage.html">Manage Chorelist</a>
-        <a class="button" href="childmanage.html">Manage Children</a>
+         <a class="button" href="chorelistmanage.php">Manage Chorelist</a>
+        <a class="button" href="childmanage.php">Manage Children</a>
         <a class="button" href="moneymanage.php">Manage Payments</a>
-        <a class="button" href="acceptchore.php">Approve Completions</a>
     </div>
 
     <h3 class="section-heading">Children's Chores Overview:</h3>
@@ -170,7 +163,7 @@ mysqli_close($conn);
                         <td><?php echo htmlspecialchars($chore['child_name']); ?></td>
                         <td><?php echo htmlspecialchars($chore['CHORE_ID']); ?></td>
                         <td><?php echo htmlspecialchars($chore['chore_description']); ?></td>
-                         <td class="status-<?php echo strtolower(htmlspecialchars($chore['STATUS'])); ?>">
+                         <td>
                             <?php echo htmlspecialchars($chore['STATUS']); ?>
                         </td>
                     </tr>
