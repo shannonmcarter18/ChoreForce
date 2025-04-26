@@ -6,6 +6,7 @@ $db_host = "localhost";
 $db_user = "root";
 $db_pswd = "";
 $db_name = "choreforce"; // Your database name
+
 $conn = "";
 
 try {
@@ -14,22 +15,23 @@ try {
     die("Database connection failed: " . mysqli_connect_error());
 }
 
-$user_id = $_SESSION["user_id"]; // This is the PARENT's ID from the user table
+$user_id = $_SESSION["user_id"]; // PARENT's ID
 $user_first_name = "Parent"; // Default values
 
-$choreid = $_POST['choreid'] ?? '';
+$childid = $_POST['childid'] ?? '';
 $accept = $_POST['accept'] ?? '';
 
-if ($choreid && $accept === 'yes') {
-    $stmt = mysqli_prepare($conn, "DELETE FROM CHORE WHERE CHORE_ID = ?");
+if ($childid && $accept === 'yes') {
+    $stmt = mysqli_prepare($conn, "DELETE FROM CHILD WHERE CID= ? AND PID= ?");
     if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "i", $choreid);
+        mysqli_stmt_bind_param($stmt, "ii", $childid, $user_id);
+
         mysqli_stmt_execute($stmt);
 
         if (mysqli_stmt_affected_rows($stmt) > 0) {
-            echo "<script>alert('Chore deleted successfully!'); window.location.href='parentportal.php';</script>";
+            echo "<script>alert('Child deleted successfully!'); window.location.href='parentportal.php';</script>";
         } else {
-            echo "<script>alert('No chore found with that ID.'); window.history.back();</script>";
+            echo "<script>alert('No child found with that ID.'); window.history.back();</script>";
         }
 
         mysqli_stmt_close($stmt);
@@ -37,7 +39,7 @@ if ($choreid && $accept === 'yes') {
         echo "<script>alert('Error preparing statement.'); window.history.back();</script>";
     }
 } else {
-    echo "<script>alert('Chore deletion not confirmed.'); window.history.back();</script>";
+    echo "<script>alert('Child deletion not confirmed.'); window.history.back();</script>";
 }
 
 $conn->close();

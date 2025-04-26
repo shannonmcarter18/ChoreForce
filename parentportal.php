@@ -140,8 +140,8 @@ mysqli_close($conn);
     <p class="user-info">Username: <strong><?php echo htmlspecialchars($user_id); ?></strong></p>
 
     <div class="button-container">
-         <a class="button" href="chorelistmanage.php">Manage Chorelist</a>
-        <a class="button" href="childmanage.php">Manage Children</a>
+         <a class="button" href="chorelistmanage.html">Manage Chorelist</a>
+        <a class="button" href="childmanage.html">Manage Children</a>
         <a class="button" href="moneymanage.php">Manage Payments</a>
         <a class="button" href="acceptchore.php">Approve Completions</a>
     </div>
