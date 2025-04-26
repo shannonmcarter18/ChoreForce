@@ -24,8 +24,8 @@
 	#update the child user's name and that the child is confirmed to be the parent's child
 
     $sql = "UPDATE USER 
-			 SET FIRST_NAME = 'childname' AND ID = 'childid' AND PARENT AS P AND CHILD AS C
-			 WHERE id = 'childid' AND ID = C.ID AND C.PID = P.ID";
+			 SET FIRST_NAME = ?
+			 WHERE id = ?";
 
 	# make $sql1 from a string into a real statement
 	$stmt1 = mysqli_prepare($conn, $sql);
