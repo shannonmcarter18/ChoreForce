@@ -1,4 +1,8 @@
 <?php
+session_start();
+$parent_id = $_SESSION['user_id'] ?? null;
+
+echo "This is the parent id: " $parent_id; 
 
 $servername = "localhost";
 $username = "your_db_username";

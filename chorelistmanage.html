@@ -111,12 +111,12 @@
     <!--Buttons to other pages-->
     <p style="text-align: center;">
 
-        <a class="button" href="addchore.html">Add a chore</a>
+        <a class="button" href="addchore.php">Add a chore</a>
         <a class="button" href="editchore.html">Edit a chore</a>
     </p>
 
     <!--for phase 4, add link to php page below-->
-    <form style="margin-top: 50px" action="" id="accept">
+    <form style="margin-top: 50px" action="deletechore.php" method="post" id="accept">
         <label for="choreid">Enter the id of the chore you would like to delete:</label> <br>
         <input type="text" id="choreid" name="choreid"
                pattern="[0-9]*" title="integers only"

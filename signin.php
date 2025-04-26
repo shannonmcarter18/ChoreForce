@@ -70,8 +70,8 @@
 		echo $_SESSION["user_id"];
 		// check whether user is a parent
 		$sql2 = "SELECT * 
-				 FROM parent
-				 WHERE id = ?";
+				FROM parent
+				WHERE id = ?";
 
 		$stmt2 = mysqli_prepare($conn, $sql2);
 
@@ -102,7 +102,7 @@
 		{
 			//echo "here it is ";
 			//echo count($r2);
-			header("Location: parentportal.html");
+			header("Location: parentportal.php");
 			exit();
 		}
 

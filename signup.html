@@ -138,8 +138,8 @@
             <p id="email_taken"></p>
 
             <label for="password">Password:</label>
-            <input type="text" id="password" name="password" class="input-field"
-                   pattern="[A-Za-z0-9!_]*" title="Alphanumerics and/or ! _"
+            <input type="text" name="password" class="input-field"
+                   pattern="[A-Za-z0-9!_@$#]*" title="Alphanumerics and/or ! _"
                    placeholder="Enter password" required>
             <div id="account_created"></div>
             <button type="submit" class="signup-btn">Sign up</button>
@@ -165,7 +165,7 @@
             }
             else if (params.has("success")) {
                 // once account is created, automatically log into parent portal.
-                window.location.href = "parentportal.html";
+                window.location.href = "parentportal.php";
             }
         </script>
     </div>
