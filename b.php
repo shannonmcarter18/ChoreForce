@@ -11,7 +11,7 @@
 	$conn = new mysqli($db_host, $db_user, $db_pswd, $db_name);
 
 	$conn ->set_charset("utf8mb4");
-	$username = $_GET['user'];
+	$username = trim($_GET['user']);
 	$password = trim($_GET['pswd']);
 	$email = trim($_GET['email']);
 
