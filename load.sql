@@ -1,28 +1,29 @@
+-- make sure to change the file paths before you import this file
 
-LOAD DATA INFILE '/Users/gayathriutla/Desktop/Projects/databases_class_project/PARENT.csv'
+LOAD DATA INFILE '/xampp/htdocs/choreforce/PARENT.csv'
 INTO TABLE PARENT
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Users/gayathriutla/Desktop/Projects/databases_class_project/CHILD.csv'
+LOAD DATA INFILE '/xampp/htdocs/choreforce/CHILD.csv'
 INTO TABLE CHILD
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Users/gayathriutla/Desktop/Projects/databases_class_project/USER.csv'
-INTO TABLE USER_ACCOUNT
+LOAD DATA INFILE '/xampp/htdocs/choreforce/USER.csv'
+INTO TABLE USER
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Users/gayathriutla/Desktop/Projects/databases_class_project/CHORE.csv'
+LOAD DATA INFILE '/xampp/htdocs/choreforce/CHORE.csv'
 INTO TABLE CHORE
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Users/gayathriutla/Desktop/Projects/databases_class_project/PAYMENT.csv'
+LOAD DATA INFILE '/xampp/htdocs/choreforce/PAYMENT.csv'
 INTO TABLE PAYMENT
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'

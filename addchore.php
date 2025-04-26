@@ -83,12 +83,15 @@
     <h2>Add New Chore</h2>
 
     <!--for phase 4, add link to php page below-->
-    <form action="">
+    <form action="addchore1.php" method="post">
 
         <p>Who is this chore for?</p>
 
+        <?php include 'addchore2.php'; ?>
+
         <!-- for phase 3 purposes, fake children are shown. change this to fit accurate data in phase 4-->
-        <input type="radio" id="child_1" name="chore_assign" value="child_1">
+
+        <!--<input type="radio" id="child_1" name="chore_assign" value="child_1">
         <label for="child_1">Child 1</label><br>
 
         <input type="radio" id="child_2" name="chore_assign" value="child_2">
@@ -96,6 +99,7 @@
 
         <input type="radio" id="child_3" name="chore_assign" value="child_3">
         <label for="child_3">Child 3</label><br>
+        -->
 
         <br><br>
         <label for="chore">Chore:</label> <br>

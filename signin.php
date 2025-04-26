@@ -51,7 +51,6 @@
 
 	if($r === null || $r["password"] != $password) // if sql query has no results or no matching result
 	{
-		//echo "incorrect username or password<br>";
 		header("Location: signin.html?error=invalid_login");
 	}
 	else if($r["password"] == $password) // if results find same user and same password
@@ -63,8 +62,8 @@
 
 		// check whether user is a parent
 		$sql2 = "SELECT * 
-				 FROM parent
-				 WHERE id = ?";
+				FROM parent
+				WHERE id = ?";
 
 		$stmt2 = mysqli_prepare($conn, $sql1);
 
@@ -72,7 +71,7 @@
 		{
 			mysqli_stmt_bind_param($stmt2, "i", $username);
 			mysqli_stmt_execute($stmt2);
-	
+
 			//echo "select successful<br>";
 		} 
 		catch(mysqli_sql_exception $e) 
