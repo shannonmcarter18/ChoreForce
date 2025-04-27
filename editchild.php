@@ -21,6 +21,12 @@
     $child_id = $_POST["childid"];
     $child_name = $_POST["childname"];
 
+	#input validation
+	if (!$child_id || !$child_name) {
+		echo "Please fill out all fields.";
+		exit();
+	}
+
 	#update the child user's name and that the child is confirmed to be the parent's child
 
     $sql = "UPDATE USER 

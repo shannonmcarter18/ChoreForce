@@ -56,13 +56,13 @@
 		echo $r["password"];
 		echo $r["password"];
 		
-		//header("Location: signin.html?error=invalid_login");
+		header("Location: signin.html?error=invalid_login");
 		exit();
 	}
 	else if(trim($r["password"]) == $password) // if results find same user and same password
 	{
 		//echo "match!<br>";
-		
+
 		// keeps user id saved for reference once page redirects to one of the portals (so you can get access to user's info in the portal pages)
 		//echo count($r);
 		$_SESSION["user_id"] = $username;

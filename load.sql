@@ -1,29 +1,29 @@
-SET FOREIGN_KEY_CHECKS = 0;
+-- make sure to change the file paths before you import this file
 
-LOAD DATA INFILE '/Applications/XAMPP/xamppfiles/htdocs/choreforce/PARENT.csv'
+LOAD DATA INFILE '/xampp/htdocs/choreforce/PARENT.csv'
 INTO TABLE PARENT
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Applications/XAMPP/xamppfiles/htdocs/choreforce/CHILD.csv'
+LOAD DATA INFILE '/xampp/htdocs/choreforce/CHILD.csv'
 INTO TABLE CHILD
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Applications/XAMPP/xamppfiles/htdocs/choreforce/USER.csv'
+LOAD DATA INFILE '/xampp/htdocs/choreforce/USER.csv'
 INTO TABLE USER
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Applications/XAMPP/xamppfiles/htdocs/choreforce/CHORE.csv'
+LOAD DATA INFILE '/xampp/htdocs/choreforce/CHORE.csv'
 INTO TABLE CHORE
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE '/Applications/XAMPP/xamppfiles/htdocs/choreforce/PAYMENT.csv'
+LOAD DATA INFILE '/xampp/htdocs/choreforce/PAYMENT.csv'
 INTO TABLE PAYMENT
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
