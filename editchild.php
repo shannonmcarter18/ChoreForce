@@ -35,7 +35,7 @@
 			JOIN CHILD c ON u.ID = c.ID 
 			SET u.FIRST_NAME = ? 
 			WHERE c.CID = ?";
-	# make $sql from a string into a real statement
+	# make $sql from a string into a real statement to ge executed and added to db
 	$stmt = mysqli_prepare($conn, $sql);
 	if($stmt) {
 		echo "Statement run";
