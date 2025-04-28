@@ -1,7 +1,9 @@
 <?php
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+	
 	session_start();
-
-	$parent_id
 
     $db_host = "localhost";
 	$db_user = "root";
@@ -18,35 +20,40 @@
 	}
 
 	# gather all inputs from html file. what's in the quotes should be the name of the input in the html file.
-    $child_id = $_POST["childid"];
-    $child_name = $_POST["childname"];
+	$parent_id = $_SESSION['user_id'] ?? '';
+    $child_id = $_POST["childid"] ?? '';
+    $child_name = $_POST["childname"]?? '';
 
 	#input validation
 	if (!$child_id || !$child_name) {
-		echo "Please fill out all fields.";
+		echo "<script>alert('Please fill in all fields.'); window.history.back();</script>";
 		exit();
 	}
 
 	#update the child user's name and that the child is confirmed to be the parent's child
-
-    $sql = "UPDATE USER 
-			 SET FIRST_NAME = ?
-			 WHERE id = ?";
-
-	# make $sql1 from a string into a real statement
-	$stmt1 = mysqli_prepare($conn, $sql);
-
-	if(mysqli_query($conn, $sql)) {
-		echo "Recorded update"
+    $sql = "UPDATE USER u
+			JOIN CHILD c ON u.ID = c.ID 
+			SET u.FIRST_NAME = ? 
+			WHERE c.CID = ?";
+	# make $sql from a string into a real statement
+	$stmt = mysqli_prepare($conn, $sql);
+	if($stmt) {
+		echo "Statement run";
 	} else {
-		echo "Error updating record: " . mysqli_error($conn);
+		echo "statement not run";
 	}
+	if(mysqli_stmt_bind_param($stmt, "si", $child_name, $child_id)){
+		echo "statement binded";
+	} else {
+		echo "error";
+	}
+	if(mysqli_stmt_execute($stmt)){
+		echo "<script>alert('Child name changed.'); window.history.back();</script>";
+	} else {
+		echo "<script>alert('Error with processing child name change.'); window.history.back();</script>";
+	}
+	mysqli_stmt_close($stmt);
 	
-	mysqli_close($conn);
-
-	$result = mysqli_stmt_get_result($sql);
-
-	$r = mysqli_fetch_assoc($result);
-
+	$conn->close();
 
 ?>
