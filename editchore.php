@@ -34,7 +34,7 @@
 		$stmt1 = mysqli_prepare($conn, $sql);
 		mysqli_stmt_bind_param($stmt1, "si", $chore_edit, $chore_id);
 		if(mysqli_stmt_execute($stmt1)){
-			echo "<script>alert('Reward amount changed.'); window.history.back();</script>";
+			echo "<script>alert('Chore description changed.'); window.history.back();</script>";
 		} else {
 			echo "<script>alert('Error with processing reward amount change.'); window.history.back();</script>";
 		}
@@ -45,7 +45,7 @@
 		$stmt2 = mysqli_prepare($conn, $sql);
 		mysqli_stmt_bind_param($stmt2, "si", $chore_edit, $chore_id);
 		if(mysqli_stmt_execute($stmt2)){
-			echo "<script>alert('Chore description changed.'); window.history.back();</script>";
+			echo "<script>alert('Reward amount changed.'); window.history.back();</script>";
 		} else {
 			echo "<script>alert('Error with processing reward amount change.'); window.history.back();</script>";
 		}
