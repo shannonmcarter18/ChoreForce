@@ -1,6 +1,6 @@
 # ChoreForce
 
-## 📦 Installation Instructions
+## Installation Instructions
 
 ### 1. Install XAMPP
 - Download and install XAMPP from [https://www.apachefriends.org/](https://www.apachefriends.org/).
