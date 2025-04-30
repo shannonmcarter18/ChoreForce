@@ -20,35 +20,41 @@
 	}
 
 	# gather all inputs from html file. what's in the quotes should be the name of the input in the html file.
-	$parent_id = $_SESSION['user_id'] ?? '';
+	$child_name = $_POST["childname"]?? '';
     $child_id = $_POST["childid"] ?? '';
-    $child_name = $_POST["childname"]?? '';
+	$parent_id = $_SESSION["user_id"];
 
 	#input validation
-	if (!$child_id || !$child_name) {
+	if (!$child_name || !$child_id ) {
 		echo "<script>alert('Please fill in all fields.'); window.history.back();</script>";
 		exit();
 	}
+	if (!$parent_id) {
+		echo "<script>alert('Session expired or user not logged in.'); window.location.href = 'login.php';</script>";
+		exit();
+	}
 
-	#update the child user's name and that the child is confirmed to be the parent's child
+	#update the child user's name and that the child is confirmed to be the parent's child from the parentid in the session
     $sql = "UPDATE USER u
 			JOIN CHILD c ON u.ID = c.ID 
+			JOIN PARENT p ON c.PID = p.ID
 			SET u.FIRST_NAME = ? 
-			WHERE c.CID = ?";
+			WHERE c.CID = ? AND p.ID = ?";
+
 	# make $sql from a string into a real statement to ge executed and added to db
 	$stmt = mysqli_prepare($conn, $sql);
 	if($stmt) {
-		echo "Statement run";
+		echo "$child_name, $child_id, $parent_id";
 	} else {
 		echo "statement not run";
 	}
-	if(mysqli_stmt_bind_param($stmt, "si", $child_name, $child_id)){
+	if(mysqli_stmt_bind_param($stmt, "sii", $child_name, $child_id, $parent_id)){
 		echo "statement binded";
 	} else {
 		echo "error";
 	}
 	if(mysqli_stmt_execute($stmt)){
-		echo "<script>alert('Child name changed.'); window.history.back();</script>";
+		echo "<script>alert('Child named changed.'); window.location.href = 'childmanage.html';</script>";
 	} else {
 		echo "<script>alert('Error with processing child name change.'); window.history.back();</script>";
 	}
