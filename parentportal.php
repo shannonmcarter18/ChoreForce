@@ -136,7 +136,7 @@ mysqli_close($conn);
     <div class="button-container">
          <a class="button" href="chorelistmanage.html">Manage Chorelist</a>
         <a class="button" href="childmanage.html">Manage Children</a>
-        <a class="button" href="moneymanage.html">Manage Payments</a>
+        <a class="button" href="moneymanage.php">Manage Payments</a>
     </div>
 
     <h3 class="section-heading">Children's Chores Overview:</h3>
@@ -144,7 +144,7 @@ mysqli_close($conn);
     <table class="chore-table">
         <thead>
             <tr>
-                <th style="width: 25%">Kid</th>
+                <th style="width: 25%">Child</th>
                 <th style="width: 15%">ChoreID</th> <th style="width: 35%">Chore Description</th> <th style="width: 25%">Status</th>
             </tr>
         </thead>

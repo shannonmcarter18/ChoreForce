@@ -73,7 +73,8 @@ $sql_fetch_chores = "
     SELECT
         ac.CHORE_ID,
         ac.DESCRIPTION AS chore_description,
-        ac.STATUS
+        ac.STATUS,
+        ac.REWARD_AMNT
     FROM
         CHILD cl
     JOIN
@@ -81,6 +82,20 @@ $sql_fetch_chores = "
     WHERE
         cl.ID = ?;
 ";
+
+$sql_total_earned = "
+    SELECT SUM(ac.REWARD_AMNT) AS total_earned
+    FROM CHILD cl
+    JOIN CHORE ac ON cl.CID = ac.CHILD_ID AND cl.PID = ac.PARENT_ID
+    WHERE cl.ID = ? AND TRIM(ac.STATUS) = 'Completed';
+";
+
+$stmt = $conn->prepare($sql_total_earned);
+$stmt->bind_param("i", $user_id); // replace $child_id with your actual variable
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$total_earned = $row['total_earned'] ?? 0;
 
 $stmt_fetch_chores = mysqli_prepare($conn, $sql_fetch_chores);
 
@@ -117,6 +132,7 @@ mysqli_close($conn);
         h2 { font-size: 32px; font-weight: bold; margin-top: 60px; text-align: center; color: #003366; }
         p { color: #4967ad; font-size: 18px; font-weight: normal; text-align: center; margin-top: -10px; margin-bottom: 40px; }
         .button { background-color: #4967ad; color: white; padding: 12px 22px; border-radius: 5px; border: none; text-align: center; font-weight: bold; font-size: 16px; cursor: pointer; transition: background-color 0.2s ease; margin: 20px auto; display: block; }
+        .box{background-color: #4967ad; color: white; padding: 12px 22px; border-radius: 5px; border: none; text-align: center; font-weight: bold; font-size: 16px;}
         .button:hover { background-color: #3a508a; }
         h3 { font-size: 24px; font-weight: bold; color: #003366; margin-left: 7.5%; margin-bottom: 15px; margin-top: 40px; }
         table { background-color: white; color: #333; width: 85%; margin-left: auto; margin-right: auto; margin-bottom: 50px; border-radius: 8px; font-size: 16px; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
@@ -128,6 +144,51 @@ mysqli_close($conn);
         td.status-completed { color: #28a745; font-weight: bold; }
         .no-chores-message td { text-align: center; color: #777; font-style: italic; padding: 20px; }
         .success-message { text-align: center; color: green; margin-top: 20px; font-size: 18px; font-weight: bold; }
+        /* Custom Checkbox Styling */
+        .custom-checkbox {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+
+        .custom-checkbox input[type="checkbox"] {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #eee;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .custom-checkbox input:checked + .checkmark:after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            width: 5px;
+            height: 10px;
+            border: solid #4CAF50;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+
     </style>
 </head>
 <body>
@@ -158,6 +219,7 @@ mysqli_close($conn);
             <th style="width: 10%">Done?</th>
             <th style="width: 15%">Chore ID</th>
             <th style="width: 55%">Chore Description</th>
+            <th style="width: 15%">Reward</th>
             <th style="width: 20%">Status</th>
         </tr>
     </thead>
@@ -172,14 +234,18 @@ mysqli_close($conn);
             </tr>
         <?php else: ?>
             <?php foreach ($child_chores as $chore): ?>
-                <tr>
-                    <td>
-                        <?php if (strtolower($chore['STATUS']) == 'pending'): ?>
-                            <input type="checkbox" name="completed_chores[]" value="<?php echo htmlspecialchars($chore['CHORE_ID']); ?>">
+                <tr> 
+                    <td> 
+                        <?php if (strtolower(trim($chore['STATUS'])) === 'pending'): ?>
+                            <label class="custom-checkbox">
+                                <input type="checkbox" name="completed_chores[]" value="<?php echo htmlspecialchars($chore['CHORE_ID']); ?>">
+                                <span class="checkmark"></span>
+                            </label>
                         <?php endif; ?>
                     </td>
                     <td><?php echo htmlspecialchars($chore['CHORE_ID']); ?></td>
                     <td><?php echo htmlspecialchars($chore['chore_description']); ?></td>
+                    <td>$<?php echo htmlspecialchars($chore['REWARD_AMNT']); ?></td>
                     <td class="status-<?php echo strtolower(htmlspecialchars($chore['STATUS'])); ?>">
                         <?php echo htmlspecialchars($chore['STATUS']); ?>
                     </td>
@@ -193,6 +259,10 @@ mysqli_close($conn);
     <button type="submit" class="button">Mark Selected as Completed</button>
 <?php endif; ?>
 </form>
+
+<div style="display:flex; justify-content: center; align-items: center;">
+    <h3 class = "box"style="text-color:white;">Total Money Earned: $<?php echo number_format($total_earned, 2); ?></h3>
+</div>
 
 </body>
 </html>

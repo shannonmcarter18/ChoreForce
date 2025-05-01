@@ -26,7 +26,7 @@ if (!$parent_id || !$child_id || !$description || !$reward) {
 
 // Insert into database
 $sql = "INSERT INTO chore (parent_id, child_id, description, reward_amnt, status)
-        VALUES (?, ?, ?, ?, 'incomplete')";
+        VALUES (?, ?, ?, ?, 'Pending')";
 
 $stmt = mysqli_prepare($conn, $sql);
 
